@@ -1,0 +1,27 @@
+<html>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+  </style>
+  <body>
+    <!-- https://react.dev/learn/reacting-to-input-with-state#how-declarative-ui-compares-to-imperative -->
+    <!-- https://codesandbox.io/p/sandbox/react-dev-f5rdws?file=%2Fpublic%2Findex.html&utm_medium=sandpack -->
+    <form id="form">
+      <h2>City quiz</h2>
+      <p>What city is located on two continents?</p>
+      <textarea id="textarea"></textarea>
+      <br />
+      <button id="button" disabled>Submit</button>
+      <p id="loading" style="display: none">Loading...</p>
+      <p id="error" style="display: none; color: red"></p>
+    </form>
+    <h1 id="success" style="display: none">That's right!</h1>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
