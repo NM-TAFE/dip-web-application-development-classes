@@ -1,0 +1,106 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <!-- Chapter 6: Have a look in your components tab -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Click through the steps in the chapter -->
+    <!-- Use the object property -->
+    <!-- <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      function Header(props) {
+        return <h1>{props.title}</h1>;
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header title="React"/>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script> -->
+    <!-- Use destructure and use template literals -->
+    <!-- Note: 
+    1. access the debugger and note the log the component out.
+    2. Notice the Node Tree Element(& properties) are part of this component.
+    3. Try storing the props as a global variable in the inspector
+    4. If you uncomment out the component above notice who you get an root rendering error 
+    -->
+    <!-- <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      function Header({ title }) {
+        return <h1>{`Cool ${title}`}</h1>;
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header title="React"/>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script> -->
+    <!-- Return a props property in a function with conditionals -->
+    <!-- <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      function createTitle(title) {
+        if (title) {
+          return title;
+        } else {
+          return 'Default title';
+        }
+      }
+
+      function Header({ title }) {
+        return <h1>{createTitle(title)}</h1>;
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header title="React"/>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script> -->
+    <!-- Return a props property using destructuring & ternary operator -->
+    <!-- You will see this one alot in the wild -->
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      function Header({ title }) {
+        return <h1>{title ? title : 'Default title'}</h1>;
+      }
+
+      function HomePage() {
+        return (
+          <div>
+            <Header />
+            <Header title="React" />
+            <Header title="A new title" />
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
