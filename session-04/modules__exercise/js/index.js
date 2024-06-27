@@ -43,8 +43,8 @@ function addPost(title, content) {
 
 // Method to dynamically add a list of books to the sidebar
 function addBooks(books) {
-  const sidebar = document.createElement("aside");
-  sidebar.className = "sidebar";
+  const booksContainer = document.createElement("aside");
+  booksContainer.className = "section subtitle is-5 has-text-primary";
 
   const bookList = document.createElement("ul");
   bookList.id = "list";
@@ -55,9 +55,9 @@ function addBooks(books) {
     bookList.appendChild(listItem);
   });
 
-  sidebar.appendChild(bookList);
+  booksContainer.appendChild(bookList);
   const container = document.querySelector(".container");
-  container.appendChild(sidebar);
+  container.appendChild(booksContainer);
 }
 
 // Method to initialise the app
