@@ -8,11 +8,6 @@ function Header({ title }) {
 }
 
 export default function HomePage() {
-  const [likes, setLikes] = useState(0);
-
-  function handleClick() {
-    setLikes(likes + 1);
-  }
 
   const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
