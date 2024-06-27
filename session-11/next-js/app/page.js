@@ -4,7 +4,7 @@ function Header({ title }) {
   return <h1>{title ? title : "Default title"}</h1>;
 }
 
-function HomePage() {
+export default function HomePage() {
   const [likes, setLikes] = useState(0);
 
   function handleClick() {
