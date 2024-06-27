@@ -25,5 +25,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-root.render(<HomePage />);
