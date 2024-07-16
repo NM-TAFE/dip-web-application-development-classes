@@ -22,6 +22,3 @@ function myFunction() {
 }
 
 myFunction();
-
-
-FetchRequest
