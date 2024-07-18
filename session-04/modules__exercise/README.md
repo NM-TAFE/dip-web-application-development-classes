@@ -57,6 +57,11 @@ Refactor the scripts.js to use the new modules.
 
 Create the following files in the /js directory:
 
+- domUpdate.js
+- eventHandlers.js
+- post.js
+- main.js (this file will be provided by your lecturer & initiates all of the other code)
+
 ### 6. Test Your Changes
 
 Open index.html in a web browser(Either from Live Server or Laragon) to ensure everything works as expected.
