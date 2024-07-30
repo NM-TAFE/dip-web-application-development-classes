@@ -15,9 +15,14 @@ const userObject = {
         linkedIn: "linkedin.com/in/johndoe"
     },
     isEmployed: true,
+
+    changeAge(newAge) {
+        this.age = newAge;
+    }
 };
 
-// Deep clone the complexObject three times using the spread operator for shallow cloning
+userObject.changeAge(50);
+// Clone the complexObject three times using the spread operator to clone.
 
 
 // Store the cloned objects in an array
