@@ -1,60 +1,63 @@
 <html>
   <body>
     <div id="app"></div>
-    <!-- Chapter 9: Have a look in your components tab -->
+    <!-- Chapter 5: Have a look in your browsersources tab for these files -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Click through the steps in the chapter -->
     <!-- <script type="text/jsx">
-      const app = document.getElementById("app")
+        const app = document.getElementById("app")
 
-      function Header({ title }) {
-        return <h1>{title ? title : 'Default title'}</h1>;
+        function header() {
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<h1>Develop. Preview. Ship.</h1>);
+    </script> -->
+    <!-- <script type="text/jsx">
+        const app = document.getElementById("app")
+
+        function header() {
+            return (<h1>Develop. Preview. Ship.</h1>)
+        }
+
+        const root = ReactDOM.createRoot(app);
+        root.render(<h1>Develop. Preview. Ship.</h1>);
+    </script> -->
+    <!-- <script type="text/jsx">
+      const app = document.getElementById("app")
+      function Header() {
+          return (<h1>Develop. Preview. Ship.</h1>)
+      }
+      const root = ReactDOM.createRoot(app);
+      root.render(<Header />);
+    </script> -->
+    <!-- <script type="text/jsx">
+      const app = document.getElementById("app")
+      function Header() {
+        return <h1>Develop. Preview. Ship.</h1>;
       }
 
       function HomePage() {
-        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-
-        return (
-          <div>
-            <Header title="Develop. Preview. Ship." />
-            <ul>
-              {names.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-            <button>Like</button>
-          </div>
-        );
+        return <div></div>;
       }
 
       const root = ReactDOM.createRoot(app);
-      root.render(<HomePage />);
+      root.render(<Header />);
     </script> -->
     <script type="text/jsx">
       const app = document.getElementById("app")
 
-      let handleClick = () => {
-        console.log('increment like count');
-      }
-
-      function Header({ title }) {
-        return <h1>{title ? title : 'Default title'}</h1>;
+      function Header() {
+        return <h1>Develop. Preview. Ship.</h1>;
       }
 
       function HomePage() {
-        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-
         return (
           <div>
-            <Header title="Develop. Preview. Ship." />
-            <ul>
-              {names.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-            <button onClick={handleClick}>Like</button>
+            {/* Nesting the Header component */}
+            <Header />
           </div>
         );
       }

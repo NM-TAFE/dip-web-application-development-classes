@@ -1,7 +1,7 @@
 Installing and setting up Tailwind CSS in a Next.js project:
 
 ````markdown
-# Setting Up Tailwind CSS in a Next.js Project
+# Setting Up Tailwind CSS in our NASA API Next.js Project
 
 ## 1. Install Dependencies
 

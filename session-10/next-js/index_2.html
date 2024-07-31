@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <!-- Chapter 9: Have a look in your components tab -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Click through the steps in the chapter -->
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      {/* Run and then move the code inside the Homepage component */}
+      const [likes, setLikes] = React.useState(0);
+
+      function handleClick() {
+        setLikes(likes + 1);
+      }
+
+      function Header({ title }) {
+        return <h1>{title ? title : 'Default title'}</h1>;
+      }
+
+      function HomePage() {
+        {/* Destructure and set the state of likes here - at the top of your component */}
+        {/* Console log the component and review the added React Hooks object */}
+
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <button onClick={handleClick}>Like ({ likes })</button>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
