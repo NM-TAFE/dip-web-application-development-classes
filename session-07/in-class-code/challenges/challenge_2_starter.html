@@ -7,9 +7,21 @@
     <!-- Babel Script -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
-      const domNode = document.getElementById("app");
+      const domNode = document.getElementById('app');
       const root = ReactDOM.createRoot(domNode);
-      root.render(<h1>Develop. Preview. Ship.</h1>);
+      root.render(<App />);
+
+      // Usage example
+      function App() {
+        const items = [
+          { id: 1, title: "First Item" },
+          { id: 2, title: "Second Item" },
+          { id: 3, title: "Third Item" },
+        ];
+
+        // Your code goes here to return JSX
+        // Hint: you will need to loop through these items
+      }
     </script>
   </body>
 </html>

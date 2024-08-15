@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React 18 App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- React and ReactDOM from UMD -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel for in-browser JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- JSX script with type="text/babel" to ensure Babel compiles it -->
+    <script type="text/jsx">
+
+      function App() {
+          // Your code here
+      }
+
+      // Correct usage of ReactDOM.createRoot
+      const domNode = document.getElementById("app");
+      const root = ReactDOM.createRoot(domNode); // Initialize the root.
+      root.render(<App />); // Render the App component.
+    </script>
+  </body>
+</html>
