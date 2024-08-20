@@ -1,6 +1,6 @@
 // https://react.dev/learn/reacting-to-input-with-state#how-declarative-ui-compares-to-imperative
-async function handleFormSubmit(e) {
-  e.preventDefault();
+async function handleFormSubmit(event) {
+  event.preventDefault();
   disable(textarea);
   disable(button);
   show(loadingMessage);
@@ -9,7 +9,7 @@ async function handleFormSubmit(e) {
     await submitForm(textarea.value);
     show(successMessage);
     hide(form);
-  } catch (err) {
+  } catch (error) {
     show(errorMessage);
     errorMessage.textContent = err.message;
   } finally {
@@ -27,20 +27,20 @@ function handleTextareaChange() {
   }
 }
 
-function hide(el) {
-  el.style.display = "none";
+function hide(element) {
+element.style.display = "none";
 }
 
-function show(el) {
-  el.style.display = "";
+function show(element) {
+element.style.display = "";
 }
 
-function enable(el) {
-  el.disabled = false;
+function enable(element) {
+element.disabled = false;
 }
 
-function disable(el) {
-  el.disabled = true;
+function disable(element) {
+element.disabled = true;
 }
 
 function submitForm(answer) {
