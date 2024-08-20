@@ -39,4 +39,6 @@ let app = new MyListComponent('#app', {
 app.render();
 
 // Update the UI
-
+app.data.books.push('Harry Potter IV');
+app.data.books.push('Harry Potter V');
+app.render();
