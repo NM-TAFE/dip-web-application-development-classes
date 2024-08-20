@@ -5,13 +5,24 @@ let data = {
 };
 
 // The template
-
+let template = function(props) {
+	let html = 
+		'<ul>' +
+			props.books.map(function (book){
+				return '<li>' + book + '</li>'
+			}).join('') + 
+			'</ul>';
+	return html;
+};
 
 // Render the template into the UI
-
+let app = document.querySelector('#app')
+app.innerHTML = template(data)
 
 
 // Update the UI
-
+data.books.push('Harry Potter IV');
+data.books.push('Harry Potter V');
+app.innerHTML = template(data)
 
 
