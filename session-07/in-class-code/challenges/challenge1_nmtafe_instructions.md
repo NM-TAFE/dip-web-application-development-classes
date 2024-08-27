@@ -124,7 +124,7 @@ import ReactDOM from "react-dom";
 
 const App = () => <h1>Hello, React!</h1>;
 
-ReactDOM.render(<App />, document.getElementById("root"));
+createRoot(document.getElementById("root")).render(<App />);
 ```
 
 ### 6. **Add npm Scripts**
