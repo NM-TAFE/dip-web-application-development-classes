@@ -12,12 +12,12 @@
       root.render(<App />);
 
       function ItemList({ items }) {
-        //template
+        // Your code goes here to return JSX
         return (
           <ol>
-            {items.map((item)=> (
-                <li key={item.id}>{item.title}</li>
-              ))}
+            {items.map((item) => (
+              <li key={item.id}>{item.title}</li>
+            ))}
           </ol>
         );
       }
@@ -30,10 +30,7 @@
           { id: 3, title: "Third Item" },
         ];
 
-        // Your code goes here to return JSX
-        // Hint: you will need to loop through these items
-        // render
-        return <ItemList items={items} />
+        return <ItemList items={items} />;
       }
     </script>
   </body>

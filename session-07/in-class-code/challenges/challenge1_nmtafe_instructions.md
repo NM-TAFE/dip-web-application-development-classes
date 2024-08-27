@@ -120,11 +120,11 @@ Add basic React code to `src/index.js`:
 
 ```javascript
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 const App = () => <h1>Hello, React!</h1>;
 
-ReactDOM.render(<App />, document.getElementById("root"));
+createRoot(document.getElementById("root")).render(<App />);
 ```
 
 ### 6. **Add npm Scripts**
