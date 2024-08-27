@@ -2,7 +2,7 @@
 
 First, create a new directory for your project and navigate into it:
 
-```bash
+```laragon-terminal
 mkdir my-react-app
 cd my-react-app
 ```
@@ -11,7 +11,7 @@ cd my-react-app
 
 Initialize a new npm project with:
 
-```bash
+```laragon-terminal
 npm init -y
 ```
 
@@ -21,7 +21,7 @@ This will create a `package.json` file with default settings.
 
 Install React and ReactDOM as dependencies:
 
-```bash
+```laragon-terminal
 npm install react@latest react-dom@latest
 ```
 
@@ -33,7 +33,7 @@ You need a build tool to compile JSX and bundle your JavaScript. You can use Web
 
 Install Webpack and Babel along with their required plugins:
 
-```bash
+```laragon-terminal
 npm install --save-dev webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin
 ```
 
@@ -91,7 +91,7 @@ Create a file named `.babelrc` in the root of your project with the following co
 
 Create the necessary directories and files:
 
-```bash
+```laragon-terminal
 mkdir src public
 touch src/index.js public/index.html
 ```
@@ -142,7 +142,7 @@ Update your `package.json` to include the following scripts:
 
 Start the development server with:
 
-```bash
+```laragon-terminal
 npm start
 ```
 
@@ -150,4 +150,4 @@ Your React app should be available at `http://localhost:3000`.
 
 ### Summary
 
-By manually setting up Webpack, Babel, and React, you gain more control over the configuration and build process. However, using Create React App is typically recommended for beginners because it handles much of the setup and configuration automatically.
+Using Create React App is typically recommended for beginners because it handles much of the setup and configuration automatically.
