@@ -1,3 +1,4 @@
+//Set break points at
 import React, { useState, useEffect } from "react";
 
 function Lifecycle() {
@@ -5,14 +6,15 @@ function Lifecycle() {
 
   // useEffect for componentDidMount and componentDidUpdate
   useEffect(() => {
-    console.log("Component mounted or updated");
+    console.log("Component mounted or updated"); // debugger
 
     return () => {
-      console.log("Component will unmount");
-    };
+      //debugger
+      console.log("Component will unmount"); // debugger
+    }; // debugger
   }, [count]);
   const incrementCount = () => {
-    setCount(count + 1);
+    setCount(count + 1); // debugger
   };
 
   return (
