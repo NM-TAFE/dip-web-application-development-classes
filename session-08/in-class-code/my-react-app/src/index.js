@@ -14,15 +14,15 @@ function ItemList({ items }) {
 }
 
 // Usage example
-const App = () => {
-  const items = [
-    { id: 1, title: "First Item" },
-    { id: 2, title: "Second Item" },
-    { id: 3, title: "Third Item" },
-  ];
+// const App = () => {
+//   const items = [
+//     { id: 1, title: "First Item" },
+//     { id: 2, title: "Second Item" },
+//     { id: 3, title: "Third Item" },
+//   ];
 
-  return <ItemList items={items} />;
-};
+//   return <ItemList items={items} />;
+// };
 
 function App() {
   const items = [
