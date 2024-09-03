@@ -5,5 +5,5 @@ export const getUserInfo = (user) => {
 
 // Step 3 fix the map method & fix duplicated method
 export const formatSkills = function (skills) {
-  return skills.map(() => skill.touppercase());
+  return skills.map((skill) => skill.toUpperCase());
 };
