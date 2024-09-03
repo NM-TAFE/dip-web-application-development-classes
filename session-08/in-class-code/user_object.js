@@ -25,3 +25,5 @@ const user = {
     }
   },
 };
+
+user.address

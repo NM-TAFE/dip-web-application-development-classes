@@ -9,7 +9,7 @@ function Lifecycle() {
     console.log("Component mounted or updated"); // debugger
 
     return () => {
-      //debugger
+      debugger
       console.log("Component will unmount"); // debugger
     }; // debugger
   }, [count]);
