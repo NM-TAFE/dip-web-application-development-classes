@@ -1,29 +1,30 @@
 import React from 'react';
-import { getUserInfo, formatUserSkills } from './utils/utils'; // Step 1 fix the import statement
+import { getUserInfo, formatSkills } from './utils/utils'; // Step 1 fix the import statement
 
 function UserProfile(props) {
   // Step 2 create object correctly
   const user = {
-    firstName = 'John',
-    lastName = 'Doe',
-    age = 30,
+    firstName : 'John',
+    lastName : 'Doe',
+    age : 30,
     isStudent: false,
     skills: ['JavaScript', 'React', 'CSS'],
   };
 
   // Step 3 fix the map method & fix duplicated method
-  const formatSkills = function(skills) {
-    return skills.map(() => skill.touppercase());
-  };
+  // const formatSkills = function(skills) {
+  //   return skills.map(() => skill.touppercase());
+  // };
+  const formattedSkills = formatSkills(user.skills);
 
   // Step 4 destructure props properly
-  const [firstname, lastname, age, isStudent, skills] = props;
+  const {firstname, lastname, age, isStudent, skills} = props;
 
   // Step 5 Fix the ternary operator
-  const greetingMessage = `Hello, {user.firstName : user.firstname  'Guest'}!`;
+  const greetingMessage = `Hello, ${firstName}!`;
 
   // Step 6 Fix the duplicated method
-  const formattedSkills = formatSkills(user.skills);
+  // const formattedSkills = formatSkills(user.skills);
 
   // Use getUserInfo utility function to generate user info string
   const userInfo = getUserInfo(user);
