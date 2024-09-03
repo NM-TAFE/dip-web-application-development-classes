@@ -15,3 +15,5 @@ const userObject = {
   },
   isEmployed: true,
 };
+
+export default userObject;
