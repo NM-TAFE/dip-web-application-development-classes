@@ -1,14 +1,14 @@
 import React from 'react';
-import { getUserInfo, formatUserSkills } from './utils'; // Step 1 fix the import statement
+import { getUserInfo, formatUserSkills } from './utils/utils'; // Step 1 fix the import statement
 
 function UserProfile(props) {
   // Step 2 create object correctly
-  const user = new Object;
-    firstName = 'John';
-    lastName = 'Doe';
-    age = 30;
-    isStudent: false;
-    skills: ['JavaScript', 'React', 'CSS'];
+  const user = {
+    firstName = 'John',
+    lastName = 'Doe',
+    age = 30,
+    isStudent: false,
+    skills: ['JavaScript', 'React', 'CSS'],
   };
 
   // Step 3 fix the map method & fix duplicated method
