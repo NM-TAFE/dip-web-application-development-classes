@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React 18 App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- React and ReactDOM from UMD -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel for in-browser JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- JSX script with type="text/babel" to ensure Babel compiles it -->
+    <script type="text/babel">
+      function UserList() {
+        const userList = [
+          {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            isStudent: false,
+            address: {
+              street: "123 Main St",
+              city: "Perth",
+              zipCode: "6000",
+            },
+            skills: ["JavaScript", "HTML", "CSS"],
+            socialProfiles: {
+              twitter: "@johndoe",
+              linkedIn: "linkedin.com/in/johndoe",
+            },
+            isEmployed: true,
+          },
+          {
+            firstName: "Bianca",
+            lastName: "Doe",
+            age: 30,
+            isStudent: false,
+            address: {
+              street: "123 Main St",
+              city: "Perth",
+              zipCode: "6000",
+            },
+            skills: ["JavaScript", "HTML", "CSS"],
+            socialProfiles: {
+              twitter: "@biancadoe",
+              linkedIn: "linkedin.com/in/biancadoe",
+            },
+            isEmployed: true,
+          },
+          {
+            firstName: "Clare",
+            lastName: "Doe",
+            age: 30,
+            isStudent: false,
+            address: {
+              street: "123 Main St",
+              city: "Perth",
+              zipCode: "6000",
+            },
+            skills: ["JavaScript", "HTML", "CSS"],
+            socialProfiles: {
+              twitter: "@clairedoe",
+              linkedIn: "linkedin.com/in/clairedoe",
+            },
+            isEmployed: true,
+          },
+        ];
+
+        // Iterate over the user list and print out first name, last name, age and skills of each user
+
+        // List example
+        return (
+          // Dont foget to wrap you list in the <ul> or <ol>tag
+          <ul>
+            {items.map((item) => (
+              <li key={item.product}>
+                Name: {item.product}
+                <br />
+                Amount: {item.number}
+                <br />
+                Price: {item.price}
+                <br />
+                Cost: {item.price * item.number}
+                <br />
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      // Correct usage of ReactDOM.createRoot
+      const domNode = document.getElementById("app");
+      const root = ReactDOM.createRoot(domNode); // Initialise the root.
+      root.render(<MyList />); // Render the App component.
+    </script>
+  </body>
+</html>
