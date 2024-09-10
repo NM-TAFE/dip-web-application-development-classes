@@ -1,6 +1,20 @@
 {
   "configurations": [
     {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}"
+    },
+  {
+    "name": "Launch Chrome",
+    "request": "launch",
+    "type": "chrome",
+    "url": "http://localhost:5500",
+    "webRoot": "${workspaceFolder}"
+  },
+    {
       // For Laragon
       "type": "chrome",
       "name": "http://localhost/source/repos/dip-web-application-development-classes/session-04/activity_1.html",
