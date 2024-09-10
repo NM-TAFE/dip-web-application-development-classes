@@ -51,9 +51,15 @@
 
     <div id="apod-content"></div>
     <script type="text/babel">
+      const inputStyle = {
+        margin: "5px",
+        padding: "7px",
+        border: "1px solid #ccc",
+        borderRadius: "4px",
+      }
 
       function DateInputComponent() {
-        return <input type="date" className="input"/>
+        return <input type="date" className="input" style={inputStyle}/>
       }
 
       const root = ReactDOM.createRoot(
