@@ -14,6 +14,7 @@
     <!-- JSX script with type="text/babel" to ensure Babel compiles it -->
     <script type="text/babel">
       function Parent() {
+   
         const userObject = {
           firstName: "John",
           lastName: "Doe",
@@ -51,11 +52,24 @@
         };
 
         // Destructure the props and render out both users in their own component in a fragment
+        return (
+            <>
+              <User {...userObject} />
+              <User {...userObject2} />
+            </>
+        );
       }
 
       // Destructuring Example
-      function ChildTwo({ name }) {
-        return <p>Child received: {name}</p>;
+      function User({ firstName, lastName,age, address, skills, socialProfiles, isEmployed }) {
+        console.log(firstName);
+        return (
+          <div>
+            <h2>Name: {firstName} {lastName}</h2>
+            <p>Age: {age}</p>
+            <p>Skills: {skills.join(', ')}</p>
+          </div>
+        );
       }
 
       const root = ReactDOM.createRoot(document.getElementById("app"));
