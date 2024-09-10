@@ -51,16 +51,36 @@
 
     <div id="apod-content"></div>
     <script type="text/babel">
-      const inputStyle = {
-        margin: "5px",
-        padding: "7px",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-      }
 
       function DateInputComponent() {
-        return <input type="date" className="input" style={inputStyle}/>
-      }
+        var newDate="";
+
+        const inputStyle = {
+          margin: "5px",
+          padding: "7px",
+          border: "1px solid #ccc",
+          borderRadius: "4px",
+        }
+
+        const inputRef = React.useRef(null);
+
+        const handleChange = () => {
+          const newDate = event.target.value;
+          inputRef.current.value = newDate;
+          debugger;
+        }
+
+        return (
+          <input 
+            type="date" 
+            className="input" 
+            style={inputStyle} 
+            onChange={handleChange} 
+            value={newDate}
+            ref={inputRef}
+          />
+        );
+    }
 
       const root = ReactDOM.createRoot(
         document.getElementById("react-date-input")
