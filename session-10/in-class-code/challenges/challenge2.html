@@ -1,0 +1,96 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <!-- Chapter 7: Have a look in your components tab -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Click through the steps in the chapter -->
+    <script type="text/babel">
+      const app = document.getElementById("app");
+
+      {
+        /* Run and then move the code inside the Homepage component */
+      }
+      // const [likes, setLikes] = React.useState(0);
+
+      // function handleClick() {
+      //   setLikes(likes + 1);
+      // }
+
+      function Header({ title }) {
+        return <h1>{title ? title : "Default title"}</h1>;
+      }
+
+      function HomePage() {
+        {
+          /* Console log the component and review the added React Hooks object
+          Note how everyting is re-rendered */
+        }
+        console.log("First item in useState object:", React.useState(0));
+        console.log(`The current value of the state : ${React.useState(0)[0]}`);
+        console.log(
+          `The function to update the state : ${React.useState(0)[1]}`
+        );
+        console.log(
+          `The current value of the likes state at the top : ${likes}`
+        );
+        console.log(
+          `The function to update the likes state at the top: ${setLikes}`
+        );
+
+        {
+          /* Destructure and set the state of likes here - at the top of your component */
+        }
+        const [likes, setLikes] = React.useState(0);
+        console.log(
+          `The current value of the likes state after destructuring: ${likes}`
+        );
+        console.log(
+          `The function to update the likes state after destructuring: ${setLikes}`
+        );
+
+        // Now, This runs when the 'likes' state changes
+        React.useEffect(() => {
+          console.log(
+            `Likes state after re-render but using UseEffect: ${likes}`
+          );
+        }, [likes]);
+
+        function handleClick() {
+          setLikes(likes + 1);
+          // Note: how these dont appear until we click the button again
+          // 1. React schedules the state update & marks the component as 'dirty' (I agree - what????)
+          // 2. the new state value is not available until the next full rerender
+          // 3. The console.log statements below run before the re-render on line 70
+          debugger;
+          console.log(
+            `Likes state after clicking but in the function : ${likes}`
+          );
+          console.log(
+            `setLikes function after clicking but in the function : ${setLikes}`
+          );
+        }
+
+        const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
+
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <button onClick={handleClick}>Like ({likes})</button>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      // Here is where all the re-rendering happens
+      debugger;
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
