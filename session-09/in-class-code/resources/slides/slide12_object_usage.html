@@ -12,13 +12,14 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- JSX script with type="text/babel" to ensure Babel compiles it -->
-    <script type="text/babel">
+    <script type="text/jsx">
+
       function DisplayDate() {
-        const today = new Date();
-        // Incorrect:
-        // return { today };
-        return <p>Today's date is: {today.toDateString()}</p>;
-      }
+          const today = new Date();
+          // Incorrect:
+          return { today };
+          // return <p>Today's date is: {today.toDateString()}</p>;
+        }
 
       // Correct usage of ReactDOM.createRoot
       const domNode = document.getElementById("app");

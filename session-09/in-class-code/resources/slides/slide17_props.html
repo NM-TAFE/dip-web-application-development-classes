@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- JSX script with type="text/babel" to ensure Babel compiles it -->
-    <script type="text/babel">
+    <script type="text/jsx">
       function Parent() {
         const userName = "Geffin";
 
@@ -31,8 +31,6 @@
 
       // Destructuring Props
       function ChildTwo({ name }) {
-        console.log(`Inside child component prop name is: ${props.name}`);
-        debugger;
         return <p>Child received: {name}</p>;
       }
 
