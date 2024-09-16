@@ -12,11 +12,11 @@
       {
         /* Run and then move the code inside the Homepage component */
       }
-      // const [likes, setLikes] = React.useState(0);
+      const [likes, setLikes] = React.useState(0);
 
-      // function handleClick() {
-      //   setLikes(likes + 1);
-      // }
+      function handleClick() {
+        setLikes(likes + 1);
+      }
 
       function Header({ title }) {
         return <h1>{title ? title : "Default title"}</h1>;
@@ -42,7 +42,7 @@
         {
           /* Destructure and set the state of likes here - at the top of your component */
         }
-        const [likes, setLikes] = React.useState(0);
+        // const [likes, setLikes] = React.useState(0);
         console.log(
           `The current value of the likes state after destructuring: ${likes}`
         );
@@ -57,20 +57,20 @@
           );
         }, [likes]);
 
-        function handleClick() {
-          setLikes(likes + 1);
-          // Note: how these dont appear until we click the button again
-          // 1. React schedules the state update & marks the component as 'dirty' (I agree - what????)
-          // 2. the new state value is not available until the next full rerender
-          // 3. The console.log statements below run before the re-render on line 70
-          debugger;
-          console.log(
-            `Likes state after clicking but in the function : ${likes}`
-          );
-          console.log(
-            `setLikes function after clicking but in the function : ${setLikes}`
-          );
-        }
+        // function handleClick() {
+        //   setLikes(likes + 1);
+        //   // Note: how these dont appear until we click the button again
+        //   // 1. React schedules the state update & marks the component as 'dirty' (I agree - what????)
+        //   // 2. the new state value is not available until the next full rerender
+        //   // 3. The console.log statements below run before the re-render on line 70
+        //   debugger;
+        //   console.log(
+        //     `Likes state after clicking but in the function : ${likes}`
+        //   );
+        //   console.log(
+        //     `setLikes function after clicking but in the function : ${setLikes}`
+        //   );
+        // }
 
         const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 

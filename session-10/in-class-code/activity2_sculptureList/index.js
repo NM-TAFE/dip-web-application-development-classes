@@ -120,6 +120,11 @@ function Gallery() {
     <>
       <Header title="Develop. Preview. Ship." />
       <button onClick={handleClick}>Next</button>
+      {/* <button onClick={handleClick()}>Next</button> */}
+      {/* <button onClick={() => setIndex((index + 1) % sculptureList.length)}> */}
+      {/* {" "}
+        Next
+      </button> */}
       <h2>
         <i>{sculpture.name} </i>
         by {sculpture.artist}
