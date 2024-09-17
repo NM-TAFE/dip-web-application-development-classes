@@ -10,13 +10,13 @@
       const app = document.getElementById("app");
 
       {
-        /* Run and then move the code inside the Homepage component */
+        /* 1. Run and then move the code inside the Homepage component */
       }
-      const [likes, setLikes] = React.useState(0);
+      // const [likes, setLikes] = React.useState(0);
 
-      function handleClick() {
-        setLikes(likes + 1);
-      }
+      // function handleClick() {
+      //   setLikes(likes + 1);
+      // }
 
       function Header({ title }) {
         return <h1>{title ? title : "Default title"}</h1>;
@@ -24,7 +24,7 @@
 
       function HomePage() {
         {
-          /* Console log the component and review the added React Hooks object
+          /* Step 2: track the stateConsole log the component and review the added React Hooks object
           Note how everyting is re-rendered */
         }
         console.log("First item in useState object:", React.useState(0));
@@ -50,12 +50,12 @@
           `The function to update the likes state after destructuring: ${setLikes}`
         );
 
-        // Now, This runs when the 'likes' state changes
-        React.useEffect(() => {
-          console.log(
-            `Likes state after re-render but using UseEffect: ${likes}`
-          );
-        }, [likes]);
+        // // Now, This runs when the 'likes' state changes
+        // React.useEffect(() => {
+        //   console.log(
+        //     `Likes state after re-render but using UseEffect: ${likes}`
+        //   );
+        // }, [likes]);
 
         // function handleClick() {
         //   setLikes(likes + 1);
