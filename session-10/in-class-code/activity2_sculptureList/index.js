@@ -125,6 +125,7 @@ function Gallery() {
       {/* {" "}
         Next
       </button> */}
+      {console.log(sculpture)}
       <h2>
         <i>{sculpture.name} </i>
         by {sculpture.artist}
