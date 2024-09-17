@@ -113,6 +113,7 @@ function Gallery() {
     // index = 0 and sculptureList.length = 12, (0 + 1) % 12 results in 1, moving to the next sculpture.
     // index = 5 and sculptureList.length = 12, (5 + 1) % 12 results in 6.
     setIndex((index + 1) % sculptureList.length);
+    console.log(`At the bottom of the function: ${index}`);
   }
 
   let sculpture = sculptureList[index];
