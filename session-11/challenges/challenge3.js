@@ -12,7 +12,7 @@ function FormComponent() {
     setInputValue(event.target.value);
     // Step 2: if the value of the input is greater than zer change the status stateto typing
     // if () {
-    // Step 3: Other wise default the status stae to empty
+    // Step 3: Other wise default the status state to empty
     // } else {
     //   ;
     // }
