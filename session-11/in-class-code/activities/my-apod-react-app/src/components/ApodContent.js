@@ -1,29 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 
-// Step 5 bring across our template
-const ApodContent = () => {
+// Activity 4 - add the retrieved data & implement the template
+const ApodContent = ({ apodData }) => {
+  // console.log(apodData);
+  // Step 3 - add a default value for the data
+  if (!apodData) {
+    return (
+      <p className="has-text-centered">
+        Please enter parameters and click "Fetch APOD".
+      </p>
+    );
+  }
+
   return (
-    <></>
     // template
-    // if (data.media_type === "image") {
-    //   container.innerHTML += `
-    //               <figure class="image is-4by3">
-    //                   <img src="${data.url}" alt="${data.title}">
-    //               </figure>
-    //               <h2 class="title is-4">${data.title}</h2>
-    //               <p>${data.explanation}</p>
-    //           `;
-    // } else if (data.media_type === "video") {
-    //   container.innerHTML += `
-    //               <div class="video-container">
-    //                   <iframe src="${data.url}" frameborder="0" allowfullscreen></iframe>
-    //               </div>
-    //               <h2 class="title is-4">${data.title}</h2>
-    //               <p>${data.explanation}</p>
-    //           `;
-    // } else {
-    //   container.innerHTML += `<p>Media type not supported: ${data.media_type}</p>`;
-    // }
+    <div>
+      {/* Step 2: Now change this to a ternary */}
+      {apodData.map((data, index) => {
+        return (
+          <div key={index} className="box">
+            {data.media_type === "image" ? (
+              <figure className="image is-4by3">
+                <img src={data.url} alt={data.title} />
+              </figure>
+            ) : (
+              <div className="video-container">
+                <iframe
+                  src={data.url}
+                  title="video-frame"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+            <h2 className="title is-4">{data.title}</h2>
+            <p>{data.explanation}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 export default ApodContent;
