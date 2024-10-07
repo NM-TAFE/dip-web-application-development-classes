@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React with Bulma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">React with Bulma</p>
+        <p class="subtitle">with Bulma integration</p>
+      </div>
+    </header>
+
+    <nav
+      class="navbar is-light"
+      id="nav-bar"
+      role="navigation"
+      aria-label="main navigation"
+    ></nav>
+
+    <!-- Main Content Area -->
+    <main class="section">
+      <div class="container">
+        <div id="app"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>React & Bulma</strong> by <a href="#">NM Tafe</a>.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="./components/navigation.js"></script>
+    <script type="text/babel">
+      const app = document.getElementById("app");
+
+      function StyledComponent() {
+        return (
+          <section className="animatedSection box">
+            This is a styled section with animation
+          </section>
+        );
+      }
+
+      const root = ReactDOM.createRoot(app);
+      root.render(<StyledComponent />);
+    </script>
+  </body>
+</html>
