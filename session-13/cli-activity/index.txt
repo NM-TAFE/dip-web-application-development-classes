@@ -1,0 +1,17 @@
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  if (password === "admin_password") {
+    res.send(`User ${username} login Successfully`).status(200);
+  } else {
+    res.send("User not Logging ").status(401);
+  }
+});
+
+app.listen(5050, () => {
+  console.log("Server is Running");
+});
