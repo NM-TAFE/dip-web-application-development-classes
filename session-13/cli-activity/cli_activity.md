@@ -1,6 +1,8 @@
-ls 
+# Command Line Instructions
+
+```bash
+ls
 ls -al
-mkdir
 mkdir hello
 ls
 cd hello
@@ -34,7 +36,6 @@ ls
 cp hello.py Documents
 cd ../Documents
 ls
-grep hello.py
 clear
 mkdir cli-test
 cd cli-test && npm init
@@ -51,7 +52,11 @@ node -v
 node -e "console.log(123)"
 node -l
 node -h
-start the next-js app and call this
+```
+
+- Start the Next.js App
+
+```bash
 curl "http://localhost:3000/api/user"
 history -w ~/history.txt
 npm init
@@ -59,7 +64,24 @@ npm install express
 npm install nodemon
 npm start
 touch index.js
-// Paste in the index.txt
-// Dont forget to add the start command to the package.json - "start": "nodemon server.js"
-// Open postman and give it a try
-curl -X POST -H "Content-Type: application/json" --json {"username":"admin","password":"admin"}'  http://localhost:5050/login
+```
+
+- Add a Start Command
+
+1. Paste the content from `index.txt` as `index.js`.
+2. Add the following start command to `package.json`:
+   ```json
+   "start": "nodemon server.js"
+   ```
+
+- Test API with Postman
+
+Run the following command:
+
+```bash
+curl -X POST -H "Content-Type: application/json" --json '{"username":"admin","password":"admin"}' http://localhost:5050/login
+```
+
+```
+
+```
