@@ -1,5 +1,6 @@
 export const sculptureList = [
   {
+    id: 1,
     name: "Homenaje a la Neurocirugía",
     artist: "Marta Colvin Andrade",
     description:
@@ -8,6 +9,7 @@ export const sculptureList = [
     alt: "A bronze statue of two crossed hands delicately holding a human brain in their fingertips.",
   },
   {
+    id: 2,
     name: "Floralis Genérica",
     artist: "Eduardo Catalano",
     description:
@@ -16,6 +18,7 @@ export const sculptureList = [
     alt: "A gigantic metallic flower sculpture with reflective mirror-like petals and strong stamens.",
   },
   {
+    id: 3,
     name: "Eternal Presence",
     artist: "John Woodrow Wilson",
     description:
@@ -24,6 +27,7 @@ export const sculptureList = [
     alt: "The sculpture depicting a human head seems ever-present and solemn. It radiates calm and serenity.",
   },
   {
+    id: 4,
     name: "Moai",
     artist: "Unknown Artist",
     description:
@@ -32,6 +36,7 @@ export const sculptureList = [
     alt: "Three monumental stone busts with the heads that are disproportionately large with somber faces.",
   },
   {
+    id: 5,
     name: "Blue Nana",
     artist: "Niki de Saint Phalle",
     description:
@@ -40,6 +45,7 @@ export const sculptureList = [
     alt: "A large mosaic sculpture of a whimsical dancing female figure in a colorful costume emanating joy.",
   },
   {
+    id: 6,
     name: "Ultimate Form",
     artist: "Barbara Hepworth",
     description:
@@ -48,6 +54,7 @@ export const sculptureList = [
     alt: "A tall sculpture made of three elements stacked on each other reminding of a human figure.",
   },
   {
+    id: 7,
     name: "Cavaliere",
     artist: "Lamidi Olonade Fakeye",
     description:
@@ -56,6 +63,7 @@ export const sculptureList = [
     alt: "An intricate wood sculpture of a warrior with a focused face on a horse adorned with patterns.",
   },
   {
+    id: 8,
     name: "Big Bellies",
     artist: "Alina Szapocznikow",
     description:
@@ -64,6 +72,7 @@ export const sculptureList = [
     alt: "The sculpture reminds a cascade of folds, quite different from bellies in classical sculptures.",
   },
   {
+    id: 9,
     name: "Terracotta Army",
     artist: "Unknown Artist",
     description:
@@ -72,6 +81,7 @@ export const sculptureList = [
     alt: "12 terracotta sculptures of solemn warriors, each with a unique facial expression and armor.",
   },
   {
+    id: 10,
     name: "Lunar Landscape",
     artist: "Louise Nevelson",
     description:
@@ -80,6 +90,7 @@ export const sculptureList = [
     alt: "A black matte sculpture where the individual elements are initially indistinguishable.",
   },
   {
+    id: 11,
     name: "Aureole",
     artist: "Ranjani Shettar",
     description:
@@ -88,6 +99,7 @@ export const sculptureList = [
     alt: "A pale wire-like sculpture mounted on concrete wall and descending on the floor. It appears light.",
   },
   {
+    id: 12,
     name: "Hippos",
     artist: "Taipei Zoo",
     description:

@@ -52,12 +52,6 @@ node -v
 node -e "console.log(123)"
 node -l
 node -h
-```
-
-- Start the Next.js App
-
-```bash
-curl "http://localhost:3000/api/user"
 history -w ~/history.txt
 npm init
 npm install express
@@ -74,14 +68,18 @@ touch index.js
    "start": "nodemon server.js"
    ```
 
-- Test API with Postman
-
-Run the following command:
-
 ```bash
 curl -X POST -H "Content-Type: application/json" --json '{"username":"admin","password":"admin"}' http://localhost:5050/login
 ```
 
-```
+- Start the Next.js App
+
+```bash
+curl "http://localhost:3000/api/user"
+
+- Test API with Postman
+
+Run the following command:
+
 
 ```
