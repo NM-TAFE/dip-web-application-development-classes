@@ -11,7 +11,8 @@ export default function RootLayout({ children }) {
       <body>
         <nav>
           {/* Navigation components */}
-          <Link href="/">Home</Link> <Link href="/about">About Us</Link>{" "}
+          <Link href="/">Home</Link>
+          <Link href="/about">About Us</Link>
           <Link href="/api/user">Get User</Link>
         </nav>
         {children}
