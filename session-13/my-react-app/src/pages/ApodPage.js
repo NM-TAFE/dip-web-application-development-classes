@@ -27,7 +27,7 @@ export default function ApodPage() {
   };
 
   return (
-    <div className="App">
+    <div className="box mt-1">
       <section className="section">
         <div className="container">
           <ApodForm fetchApodData={fetchApodData} />

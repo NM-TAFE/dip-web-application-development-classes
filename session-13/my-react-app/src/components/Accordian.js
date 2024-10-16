@@ -15,7 +15,7 @@ function Panel({ title, isActive, onShow, children }) {
 const Accordion = function Accordion() {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="box">
+    <div className="box mt-1">
       <h2 className="title is-3">Almaty, Kazakhstan</h2>
 
       <Panel
