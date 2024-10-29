@@ -22,7 +22,11 @@ or you can directly import Bootstrap in your layout component:
 ```javascript
 /* app/layout.js */
 
+<<<<<<< HEAD
 // import "bootstrap/dist/css/bootstrap.min.css";
+=======
+import "bootstrap/dist/css/bootstrap.min.css";
+>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60
 import "../styles/globals.css"; // Optional for custom global styles
 
 // add some bootstrap classes to test the install

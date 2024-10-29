@@ -1,5 +1,8 @@
 import "../styles/globals.css";
+<<<<<<< HEAD
 import { ThemeProvider } from "./context/ThemeContext";
+=======
+>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60
 
 export const metadata = {
   title: "NM Tafe Next.js App",
@@ -53,7 +56,15 @@ export default function RootLayout({ children }) {
         </nav>
 
         {/* Main content section */}
+<<<<<<< HEAD
         <ThemeProvider>{children}</ThemeProvider>
+=======
+        <main className="py-4">
+          <div className="container">
+            {children} {/* This will render the children (pages) */}
+          </div>
+        </main>
+>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60
 
         {/* Footer */}
         <footer className="bg-light text-center py-4 mt-4">

@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 
 export default async function ApodDetail({ params }) {
+<<<<<<< HEAD
   const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+=======
+  const apiKey = "{YOUR_API_KEY}";
+>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60
 
   const { id } = params;
 

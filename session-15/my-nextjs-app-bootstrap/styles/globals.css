@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+=======
+<<<<<<<< HEAD:session-15/my-nextjs-app/styles/globals.css
+@import "bulma/css/bulma.min.css";
+
+========
+>>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60:session-15/my-nextjs-app-bootstrap/styles/globals.css
+>>>>>>> 8b23c6fbfaff2e670e718920b2131a0fbc0cee60
 body {
   font-family: Arial, sans-serif;
   margin: 0;
