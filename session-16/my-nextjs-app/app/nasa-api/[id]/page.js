@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+export const runtime = "edge";
+
 export default async function ApodDetail({ params }) {
   const apiKey = "{YOUR_API_KEY}";
 

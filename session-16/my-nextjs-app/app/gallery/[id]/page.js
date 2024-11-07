@@ -1,14 +1,16 @@
-'use client';
-import {notFound} from 'next/navigation';
-import Image from 'next/image';
-import {use} from 'react';
+"use client";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { use } from "react";
 import { sculptureList } from "../../data/list.js";
 
-export default function GalleryItem({params}){
+export const runtime = "edge";
+
+export default function GalleryItem({ params }) {
   // get the param from the url
   // 'http://localhost/gallery/1'
   // useParams => 1
-  const { id } = use(params)
+  const { id } = use(params);
 
   const sculpture = sculptureList.find((item) => item.id == id);
 
@@ -31,7 +33,7 @@ export default function GalleryItem({params}){
             alt={sculpture.alt}
             width={400}
             height={200}
-            />
+          />
           <p>{sculpture.description}</p>
         </>
       ) : (
@@ -39,4 +41,4 @@ export default function GalleryItem({params}){
       )}
     </div>
   );
-};
+}
