@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APOD Viewer</title>
+    <!-- <script defer src="main.js"></script> -->
+    <!-- Vanilla JavaScript -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- Other HTML inputs and buttons -->
+    <form>
+      <div class="field">
+        <label class="label">Date (YYYY-MM-DD)</label>
+        <!-- Container for React component -->
+        <div id="react-date-input"></div>
+      </div>
+      <div class="field">
+        <label class="label">Start Date (YYYY-MM-DD)</label>
+        <div class="control">
+          <input class="input" type="date" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">End Date (YYYY-MM-DD)</label>
+        <div class="control">
+          <input class="input" type="date" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Count</label>
+        <div class="control">
+          <input class="input" type="number" id="count" placeholder="Count" />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Include Video Thumbnails</label>
+        <div class="control">
+          <input class="checkbox" type="checkbox" />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-link" type="submit">Fetch APOD</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="apod-content"></div>
+    <script type="text/babel">
+      // Import and render the DateInputComponent
+      function DateInputComponent() {
+        // Step 1 : set the new Date to a default
+        var newDate = "";
+
+        // Step 3: handle the change
+        const handleChange = (event) => {
+          // Step 4: set the newDate to the event target value
+          const newDate = event.target.value;
+          debugger;
+        };
+
+        return (
+          <input
+            type="date"
+            className="input"
+            value={newDate}
+            // To handle the date change we reach for Vanilla JS onchange property
+            // Step 2:
+            onChange={handleChange}
+          />
+        );
+      }
+
+      const root = ReactDOM.createRoot(
+        document.getElementById("react-date-input")
+      );
+      root.render(<DateInputComponent />);
+    </script>
+  </body>
+</html>

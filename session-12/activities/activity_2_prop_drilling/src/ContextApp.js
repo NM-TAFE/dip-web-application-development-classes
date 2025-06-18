@@ -4,7 +4,7 @@ import FourthComponent from "./components/FourthComponent";
 import { UserContext } from "./contexts/UserContext";
 
 const ContextApp = () => {
-  const [userName, setUserName] = useState("Diane Crisp");
+  const [userName, setUserName] = useState("Peter Crisp");
 
   return (
     <UserContext.Provider value={userName}>

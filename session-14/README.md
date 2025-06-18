@@ -1,3 +1,0 @@
-## This folder is empty intentially but will be updated
-
-- activity instructions to follow....

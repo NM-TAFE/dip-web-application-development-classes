@@ -16,6 +16,8 @@ const ApodForm = ({ fetchApodData }) => {
     if (endDate) parameters.end_date = endDate;
     if (count) parameters.count = count;
     if (thumbs) parameters.thumbs = true;
+    debugger;
+    console.log(`Inside the handlesubmit apodform parameters is ${parameters}`);
     fetchApodData(parameters);
   };
 

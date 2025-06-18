@@ -8,7 +8,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     {/* Switch when showing context usage */}
-    <App />
-    {/* <ContextApp /> */}
+    {/* <App /> */}
+    <ContextApp />
   </StrictMode>
 );

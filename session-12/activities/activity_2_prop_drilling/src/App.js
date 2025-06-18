@@ -4,7 +4,7 @@ import SecondComponent from "./components/SecondComponent";
 
 const App = () => {
   // Consider our complex UserObject here!!!
-  const [userName, setUserName] = useState("Diane Crisp");
+  const [userName, setUserName] = useState("Peter Chips");
 
   return (
     <div>

@@ -5,15 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "johns-start": "webpack serve --mode development",
-    "johns-build": "webpack --mode production"
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bulma": "^1.0.2",
+    "css-loader": "^7.1.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "style-loader": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

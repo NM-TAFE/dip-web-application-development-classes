@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React with Bulma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">React with Bulma</p>
+        <p class="subtitle">with Bulma integration</p>
+      </div>
+    </header>
+
+    <nav
+      class="navbar is-light"
+      id="nav-bar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./">Home</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="section">
+      <div class="container">
+        <div id="app"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>React & Bulma</strong> by <a href="#">NM Tafe</a>.</p>
+      </div>
+    </footer>
+
+    <!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+    <script
+      async
+      src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react?dev",
+          "react-dom/client": "https://esm.sh/react-dom/client?dev"
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React, { StrictMode } from "react";
+      import { createRoot } from "react-dom/client";
+
+      import { useState } from "react";
+      const app = document.getElementById("app");
+
+      function Panel({ title, isActive, onShow, children }) {
+        return (
+          <article className="message is-info">
+            <div className="message-header" onClick={onShow}>
+              <p>{title}</p>
+            </div>
+            {isActive && <div className="message-body">{children}</div>}
+          </article>
+        );
+      }
+
+      const App = function Accordion() {
+        const [activeIndex, setActiveIndex] = useState(0);
+        return (
+          <div className="container">
+            <h2 className="title is-3">Almaty, Kazakhstan</h2>
+
+            <Panel
+              title="About"
+              isActive={activeIndex === 0}
+              onShow={() => setActiveIndex(0)}
+            >
+              With a population of about 2 million, Almaty is Kazakhstan's
+              largest city. From 1929 to 1997, it was its capital city.
+            </Panel>
+
+            <Panel
+              title="Etymology"
+              isActive={activeIndex === 1}
+              onShow={() => setActiveIndex(1)}
+            >
+              The name comes from <span lang="kk-KZ">алма</span>, the Kazakh
+              word for "apple" and is often translated as "full of apples". In
+              fact, the region surrounding Almaty is thought to be the ancestral
+              home of the apple, and the wild <i lang="la">Malus sieversii</i>{" "}
+              is considered a likely candidate for the ancestor of the modern
+              domestic apple.
+            </Panel>
+          </div>
+        );
+      };
+
+      const root = createRoot(app);
+      root.render(
+        <StrictMode>
+          <App />
+        </StrictMode>
+      );
+    </script>
+  </body>
+</html>

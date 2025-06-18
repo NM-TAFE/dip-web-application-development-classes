@@ -1,0 +1,25 @@
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    background-color: lightgray;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+    background-color: lightblue;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    background-color: lightgray;
+  }
+}
+
+.animatedSection {
+  color: blue;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  animation: fadeInScale 3s ease-in-out infinite;
+}

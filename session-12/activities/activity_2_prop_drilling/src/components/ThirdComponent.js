@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 // Uncomment the lines below once context is set
-// import { UserContext } from "../contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 
-// const ThirdComponent = () => {
-const ThirdComponent = ({ userName }) => {
-  // const userName = useContext(UserContext);
+const ThirdComponent = () => {
+  // const ThirdComponent = ({ userName }) => {
+  const userName = useContext(UserContext);
+  // debugger;
+
   return (
     <div>
       <h3>Third Component: User is {userName}</h3>
