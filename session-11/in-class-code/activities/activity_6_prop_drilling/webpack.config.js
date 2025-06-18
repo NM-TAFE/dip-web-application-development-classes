@@ -17,8 +17,11 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/, // Match any .css file
+        use: [
+          "style-loader", // Injects CSS into the DOM
+          "css-loader", // Turns CSS into CommonJS
+        ],
       },
     ],
   },
