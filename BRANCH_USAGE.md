@@ -1,87 +1,131 @@
-To bring the latest changes from the `main` branch into another branch without overwriting the work on that branch, you can use **Git merge** or **Git rebase**. Both methods will bring changes from the `main` branch into your current branch, but they handle conflicts differently. Here’s a step-by-step guide for each approach:
+## Keeping Your Branch Up to Date with the Original Repository
 
-### **Option 1: Merging the `main` branch into another branch**
+When you're working on a GitHub project from a **fork**, you need to make sure your branch stays updated with the latest changes from the original (upstream) repository.
 
-1. **Switch to the target branch** (the branch where you want to bring the changes):
+Here's how to do that **without overwriting your own work**.
+
+---
+
+## Step 1: Fork the Repository
+
+1. Go to the GitHub repository provided by your instructor.
+2. Click **"Fork"** (top-right corner).
+3. Clone **your fork** to your computer:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+```
+
+---
+
+## Step 2: Set the Upstream Remote
+
+The upstream is the **original repository** you forked from (e.g., your instructor's or the class repo).
+
+```bash
+git remote add upstream https://github.com/NM-TAFE/dip-web-application-development-classes.git
+```
+
+You can check that both remotes are set correctly:
+
+```bash
+git remote -v
+```
+
+Expected output:
+
+```
+origin    https://github.com/YOUR_USERNAME/REPO_NAME.git (fetch)
+origin    https://github.com/YOUR_USERNAME/REPO_NAME.git (push)
+upstream  https://github.com/NM-TAFE/dip-web-application-development-classes.git (fetch)
+upstream  https://github.com/NM-TAFE/dip-web-application-development-classes.git (push)
+```
+
+---
+
+## Step 3: Pull Updates from Upstream
+
+To get the latest changes from the `main` branch of the original repo into **your own branch**, follow either **merge** or **rebase** instructions below.
+
+---
+
+### Option 1: **Merge** `upstream/main` into your branch
+
+This is safer and easier for beginners.
+
+1. Switch to the branch you're working on:
 
    ```bash
-   git checkout <your-branch>
+   git checkout your-branch-name
    ```
 
-2. **Fetch the latest changes from `main`** (to ensure you have the latest commits):
+2. Fetch the latest changes from upstream:
 
    ```bash
-   git fetch origin
+   git fetch upstream
    ```
 
-3. **Merge the `main` branch into your branch**:
+3. Merge those changes into your branch:
 
    ```bash
-   git merge origin/main
+   git merge upstream/main
    ```
 
-   - This will merge the latest changes from the `main` branch into your current branch.
-   - If there are conflicts, Git will notify you, and you can resolve them manually before completing the merge.
+4. If you see conflicts, Git will guide you to resolve them. Open the conflicting files, fix them, then:
 
-4. **Resolve any conflicts**, if necessary:
-
-   - Open the conflicting files and make manual edits.
-   - Once resolved, mark the conflicts as resolved by adding the changes:
-     ```bash
-     git add <file>
-     ```
-
-5. **Complete the merge**:
-   After resolving any conflicts, complete the merge with:
    ```bash
+   git add <file>
    git commit
    ```
 
-### **Option 2: Rebasing your branch onto `main`**
+---
 
-Alternatively, you can rebase your branch onto the latest `main` branch. This keeps your commit history cleaner, as it applies your branch’s changes on top of the latest `main` branch commits.
+### Option 2: **Rebase** your branch onto `upstream/main`
 
-1. **Switch to the target branch**:
+This keeps your history cleaner, but should only be used **before pushing your branch** to GitHub.
+
+1. Checkout your working branch:
 
    ```bash
-   git checkout <your-branch>
+   git checkout your-branch-name
    ```
 
-2. **Fetch the latest changes from `main`**:
+2. Fetch latest updates from upstream:
 
    ```bash
-   git fetch origin
+   git fetch upstream
    ```
 
-3. **Rebase your branch onto `main`**:
+3. Rebase your branch onto upstream/main:
 
    ```bash
-   git rebase origin/main
+   git rebase upstream/main
    ```
 
-   - This will reapply your branch’s changes on top of the latest commits from `main`.
-   - If there are conflicts, Git will pause the rebase and allow you to resolve them.
+4. If there are conflicts:
 
-4. **Resolve any conflicts**, if necessary:
-
-   - Open the conflicting files, make your changes, and then add the files:
-     ```bash
-     git add <file>
-     ```
-
-5. **Continue the rebase**:
-   After resolving conflicts, continue the rebase:
+   - Fix them in the file(s)
+   - Then run:
 
    ```bash
+   git add <file>
    git rebase --continue
    ```
 
-6. **Force-push your branch** (only if you have already pushed your branch to a remote repository):
+5. If you already pushed this branch to GitHub, you need to **force push**:
+
    ```bash
    git push --force-with-lease
    ```
 
-### **Which to Use: Merge or Rebase?**
+---
 
-- **Merge** is safer for preserving the original history of your branch. It creates a merge commit, showing where the two branches merged.
-- **Rebase** results in a cleaner history, as it applies your changes on top of `main` as if they were developed after the latest `main` changes. However, it rewrites history, which can be problematic if your branch has already been pushed to a shared repository.
+## Merge vs Rebase – Which Should You Use?
+
+| Merge                            | Rebase                                          |
+| -------------------------------- | ----------------------------------------------- |
+| Easier, especially for beginners | Cleaner commit history                          |
+| Creates a merge commit           | Rewrites commit history                         |
+| Keeps record of when you merged  | Avoids extra merge commits                      |
+| Safe for shared branches         | Should only be done before pushing or with care |
