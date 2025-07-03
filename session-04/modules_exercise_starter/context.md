@@ -1,14 +1,15 @@
-# Context and Considerations for UI/UX Modularisation
+# Considerations for UI/UX Modularisation
 
 ## Overview
 
-In this exercise, you will think critically about how to split the UI/UX of our application to make it more efficient and user-friendly. You will be guided through a set of steps that will lead you to modularise the code into `domUpdate`, `eventHandler` modules, and a `Post` class.
+Think critically about how to split the UI/UX of our application to make it more efficient and user-friendly. You will be guided through a
+Your task is to modularise the code into `domUpdate`, `eventHandler` modules, and a `Post` class.
 
-## Steps and Considerations
+As you application and folder strcuture grows particularily with our final work with sever side, client side and api components this process proves invaluable if done right ealry on.
 
 ### 1. Understanding the Current State
 
-First, review the current state of the application. Open the HTML and JavaScript files and understand how the UI elements and event handlers are currently managed.
+First, review the current state of the application. Open the HTML and JavaScript files and understand how the UI elements and event handlers are currently managed. Consider how will this change.
 
 **Questions to Consider:**
 
@@ -32,7 +33,7 @@ Event handling is a crucial part of any interactive application. Consider how yo
 **Questions to Consider:**
 
 - What events are being handled in the current application?
-- How can you abstract event handling logic into a separate module?
+- Why you seperate(abstract) event handling logic into a separate module?
 
 ### 4. DOM Manipulation
 
@@ -41,7 +42,7 @@ Manipulating the DOM is necessary for updating the UI based on user interactions
 **Questions to Consider:**
 
 - What DOM updates are being made in response to user interactions?
-- How can you create functions that encapsulate these updates?
+- How can you create functions that hold(encapsulate) these updates?
 
 ### 5. Creating a `Post` Class
 
@@ -76,7 +77,3 @@ This module will contain functions that update the DOM, such as adding new posts
 This class will represent a blog post, encapsulating data like title and content, and providing methods to create and manage post elements.
 
 By splitting the code into these modules, you will achieve a more organised, maintainable, and scalable application. This approach also follows the principles of separation of concerns, making it easier to understand and modify individual parts of the application without affecting the whole system.
-
-## Conclusion
-
-By carefully considering how to modularise the UI/UX of your application, you can significantly improve the user experience and maintainability of your code. Follow the steps above, answer the questions, and implement your modularised solution.

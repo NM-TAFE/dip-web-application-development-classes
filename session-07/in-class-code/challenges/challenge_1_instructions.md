@@ -1,3 +1,7 @@
+### Summary
+
+Using Create React App is typically recommended for beginners because it handles much of the setup and configuration automatically. To understand the building block of the React, Next JS ecosystem we will work with stripped down manual installations
+
 ### 1. **Set Up the Project Directory**
 
 First, create a new directory for your project and navigate into it:
@@ -7,21 +11,23 @@ mkdir my-react-app
 cd my-react-app
 ```
 
-### 2. **Initialize a New npm Project**
+### 2. **Initialise a New npm Project**
 
-Initialize a new npm project with:
+Initialise a new npm project with:
 
-```laragon-terminal
-npm init -y
+```bash
+npm init -y. #or npm init for a manual
 ```
 
 This will create a `package.json` file with default settings.
+
+**Delete the type in the package.json - this causes the compiler problems**
 
 ### 3. **Install React and ReactDOM**
 
 Install React and ReactDOM as dependencies:
 
-```laragon-terminal
+```bash
 npm install react@latest react-dom@latest
 ```
 
@@ -33,9 +39,12 @@ You need a build tool to compile JSX and bundle your JavaScript. You can use Web
 
 Install Webpack and Babel along with their required plugins:
 
-```laragon-terminal
+```bash
 npm install --save-dev webpack webpack-cli webpack-dev-server babel-loader @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin
+
 ```
+
+**Note:** now we add you .gitignore!
 
 #### **Create Webpack Configuration**
 
@@ -50,6 +59,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true, // cleans up the /dist folder before build
   },
   module: {
     rules: [
@@ -124,7 +134,8 @@ import { createRoot } from "react-dom/client";
 
 const App = () => <h1>Hello, React!</h1>;
 
-createRoot(document.getElementById("root")).render(<App />);
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
 ```
 
 ### 6. **Add npm Scripts**
@@ -142,12 +153,8 @@ Update your `package.json` to include the following scripts:
 
 Start the development server with:
 
-```laragon-terminal
+```bash
 npm start
 ```
 
 Your React app should be available at `http://localhost:3000`.
-
-### Summary
-
-Using Create React App is typically recommended for beginners because it handles much of the setup and configuration automatically.
