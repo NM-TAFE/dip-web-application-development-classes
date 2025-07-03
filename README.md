@@ -3,12 +3,12 @@ Start by forking this repository to your personnal account. To pull updates from
 ## Clone Your Fork: 
 Clone your forked repository to your local machine if you haven't already done so. You can do this with the git clone command followed by your fork's URL.
 
-git clone <your-fork-url>
+git clone your-fork-url
 
 ## Add Upstream Remote: 
 Navigate to the directory of your local repository and add the original repository as a remote named "upstream". 
 
-cd <your-local-repo>
+cd your-local-repo
 
 git remote add upstream https://github.com/NM-TAFE/dip-web-application-development-classes.git 
 **make sure you are working on your classes branch**
@@ -32,8 +32,8 @@ Resolve Conflicts (if any): If there are any merge conflicts, resolve them manua
 ## Push Changes to Your Fork: 
 Once you've resolved any conflicts and merged or rebased the changes, push them to your fork on GitHub.
 
-git push origin <branch-name>
+git push origin branch-name
 
-Replace <branch-name> with the name of the branch you've updated.
+Replace branch-name with the name of the branch you've updated.
 
 Now your forked repository on GitHub should be up to date with the changes from the original repository.
