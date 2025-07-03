@@ -10,7 +10,7 @@ Navigate to the directory of your local repository and add the original reposito
 
 cd <your-local-repo>
 
-git remote add upstream https://github.com/NM-TAFE/dip-web-application-classes.git
+git remote add upstream https://github.com/NM-TAFE/dip-web-application-development-classes.git **make sure you are working on your classes branch**
 
 ## Fetch Upstream Changes: Fetch the changes from the original repository.
 git fetch upstream
