@@ -7,26 +7,27 @@
       "url": "http://localhost:5500",
       "webRoot": "${workspaceFolder}"
     },
-  {
-    "name": "Launch Chrome",
-    "request": "launch",
-    "type": "chrome",
-    "url": "http://localhost:5500",
-    "webRoot": "${workspaceFolder}"
-  },
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}"
+    },
     {
       // For Laragon
       "type": "chrome",
-      "name": "http://localhost/source/repos/dip-web-application-development-classes/session-04/activity_1.html",
+      "name": "Chrome - Laragon",
       "request": "launch",
-      "url": "http://localhost/source/repos/dip-web-application-development-classes/session-04/activity_1.html"
+      "url": "http://localhost/DWA/dip-web-application-development-classes/session-01/index.html"
     },
     {
       // For Live Server
       "type": "chrome",
-      "name": "http://localhost:5500/session-04/activity_1.html",
+      "name": "Chrome - Live Server on Laragon",
       "request": "launch",
-      "url": "http://localhost:5500/session-04/activity_1.html"
+      "url": "http://127.0.0.1:5500/session-01/index.html"
+      // "url": "http://localhost:5500/session-01/index.html"
     }
   ]
 }
