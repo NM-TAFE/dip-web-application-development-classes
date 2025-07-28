@@ -8,4 +8,4 @@ let numbers = [1, 2, 3, 4, 5];
 
 // Use the slice() method to exclude the first 3 elements and return a new array
 
-// Set the value of the outputfield inner html to the new array
+// Set the value of the output field inner html to the new array
