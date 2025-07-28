@@ -1,38 +1,179 @@
-Start by forking this repository to your personnal account. To pull updates from the original repository (upstream) into your forked repository on GitHub, you need to follow these steps:
+# Web Application Development Classes
 
-## Clone Your Fork: 
-Clone your forked repository to your local machine if you haven't already done so. You can do this with the git clone command followed by your fork's URL.
+Sessions will include lecture material & coding challenges. We provide base content for you to use in your learning.
 
-git clone <your-fork-url>
+## Setting Up Your Code Environment
 
-## Add Upstream Remote: 
-Navigate to the directory of your local repository and add the original repository as a remote named "upstream". 
+To allow us to use all of the packages and tools we might need, we need to set up our code environment:
 
-cd <your-local-repo>
+1. **Open Laragon:**
+2. Open the terminal (ensure you are in the `www` folder) then type the following commands:
 
-git remote add upstream https://github.com/NM-TAFE/dip-web-application-classes.git
+   ```bash
+   mkdir source
+   cd source
+   mkdir repos
+   cd repos
+   ```
 
-## Fetch Upstream Changes: Fetch the changes from the original repository.
-git fetch upstream
+3. Clone the class content into the folder using:
 
+   ```bash
+   git clone https://github.com/NM-TAFE/dip-web-application-development-classes.git
+   ```
 
-## Merge or Rebase: 
-After fetching the changes, you can either merge them into your local branch or rebase your changes on top of the upstream changes.
-## Merge:
-git merge upstream/main
+4. Navigate back to the `www` folder:
 
-Replace main with the name of the branch you want to merge into.
-## Rebase:
-git rebase upstream/main
+   ```bash
+   cd ../../
+   ```
 
-Again, replace main with the name of the branch you want to rebase onto.
-Resolve Conflicts (if any): If there are any merge conflicts, resolve them manually. Git will indicate which files have conflicts, and you'll need to edit those files to resolve the conflicts.
+5. Check that npm is installed:
 
-## Push Changes to Your Fork: 
-Once you've resolved any conflicts and merged or rebased the changes, push them to your fork on GitHub.
+   ```bash
+   npm -v
+   ```
 
-git push origin <branch-name>
+6. Install the latest version:
 
-Replace <branch-name> with the name of the branch you've updated.
+   ```bash
+   npm install -g npm@latest
+   ```
 
-Now your forked repository on GitHub should be up to date with the changes from the original repository.
+7. Check the installation worked (if updates are required):
+
+   ```bash
+   npm -v
+   ```
+
+## Keeping Your Branch Up to Date with the Original Repository
+
+When you're working on a GitHub project from a **fork**, you need to make sure your branch stays updated with the latest changes from the original (upstream) repository.
+
+Here's how to do that **without overwriting your own work**.
+
+---
+
+## Step 1: Fork the Repository
+
+1. Go to the GitHub repository provided by your instructor.
+2. Click **"Fork"** (top-right corner).
+3. Clone **your fork** to your computer:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
+cd REPO_NAME
+```
+
+---
+
+## Step 2: Set the Upstream Remote
+
+The upstream is the **original repository** you forked from (e.g., your instructor's or the class repo).
+
+```bash
+git remote add upstream https://github.com/NM-TAFE/dip-web-application-development-classes.git
+```
+
+You can check that both remotes are set correctly:
+
+```bash
+git remote -v
+```
+
+Expected output:
+
+```
+origin    https://github.com/YOUR_USERNAME/REPO_NAME.git (fetch)
+origin    https://github.com/YOUR_USERNAME/REPO_NAME.git (push)
+upstream  https://github.com/NM-TAFE/dip-web-application-development-classes.git (fetch)
+upstream  https://github.com/NM-TAFE/dip-web-application-development-classes.git (push)
+```
+
+---
+
+## Step 3: Pull Updates from Upstream
+
+To get the latest changes from the **semesters branch** of the original repo into **your own branch**, follow either **merge** or **rebase** instructions below.
+
+---
+
+### Option 1: **Merge** `upstream/<BRANCH_NAME>` into your branch
+
+This is safer and easier for beginners.
+
+1. Switch to the branch you're working on:
+
+   ```bash
+   git checkout your-branch-name
+   ```
+
+2. Fetch the latest changes from upstream:
+
+   ```bash
+   git fetch upstream
+   ```
+
+3. Merge those changes into your branch:
+
+   ```bash
+   git merge upstream/<BRANCH_NAME>
+   ```
+
+4. If you see conflicts, Git will guide you to resolve them. Open the conflicting files, fix them, then:
+
+   ```bash
+   git add <file>
+   git commit
+   ```
+
+---
+
+### Option 2: **Rebase** your branch onto `upstream/<BRANCH_NAME>`
+
+This keeps your history cleaner, but should only be used **before pushing your branch** to GitHub.
+
+1. Checkout your working branch:
+
+   ```bash
+   git checkout your-branch-name
+   ```
+
+2. Fetch latest updates from upstream:
+
+   ```bash
+   git fetch upstream
+   ```
+
+3. Rebase your branch onto upstream/<BRANCH_NAME>:
+
+   ```bash
+   git rebase upstream/<BRANCH_NAME>
+   ```
+
+4. If there are conflicts:
+
+   - Fix them in the file(s)
+   - Then run:
+
+   ```bash
+   git add <file>
+   git rebase --continue
+   ```
+
+5. If you already pushed this branch to GitHub, you need to **force push**:
+
+   ```bash
+   git push --force-with-lease
+   ```
+
+---
+
+## Merge vs Rebase – Which Should You Use?
+
+| Merge                            | Rebase                                          |
+| -------------------------------- | ----------------------------------------------- |
+| Easier, especially for beginners | Cleaner commit history                          |
+| Creates a merge commit           | Rewrites commit history                         |
+| Keeps record of when you merged  | Avoids extra merge commits                      |
+| Safe for shared branches         | Should only be done before pushing or with care |

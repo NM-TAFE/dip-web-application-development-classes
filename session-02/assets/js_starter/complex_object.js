@@ -1,6 +1,6 @@
 const userObject = {
-  firstName: "John",
-  lastName: "Doe",
+  firstName: "Aldus",
+  lastName: "Huxley",
   age: 30,
   isStudent: false,
   address: {
@@ -10,14 +10,14 @@ const userObject = {
   },
   skills: ["JavaScript", "HTML", "CSS"],
   socialProfiles: {
-    twitter: "@johndoe",
-    linkedIn: "linkedin.com/in/johndoe",
+    twitter: "@aldus",
+    linkedIn: "linkedin.com/in/ahuxley",
   },
   isEmployed: true,
 };
 
-console.log(userObject); // The object.
-console.log(userObject.firstName); // Output: John
-console.log(userObject.address.city); // Output: Anytown
-console.log(userObject.skills[0]); // Output: JavaScript
-console.log(userObject.socialProfiles.twitter); // Output: @johndoe
+// console.log(userObject); // The object.
+// console.log(userObject.firstName); // Output: Aldus
+// console.log(userObject.address.city); // Output: Perth
+// console.log(userObject.skills[0]); // Output: JavaScript
+// console.log(userObject.socialProfiles.twitter); // Output: @aldus

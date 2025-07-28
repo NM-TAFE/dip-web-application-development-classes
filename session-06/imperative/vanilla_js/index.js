@@ -28,19 +28,19 @@ function handleTextareaChange() {
 }
 
 function hide(element) {
-element.style.display = "none";
+  element.style.display = "none";
 }
 
 function show(element) {
-element.style.display = "";
+  element.style.display = "";
 }
 
 function enable(element) {
-element.disabled = false;
+  element.disabled = false;
 }
 
 function disable(element) {
-element.disabled = true;
+  element.disabled = true;
 }
 
 function submitForm(answer) {

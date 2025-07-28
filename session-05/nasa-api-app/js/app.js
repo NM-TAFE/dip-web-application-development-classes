@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-    // Challenege 1
-    // 1. check all the form fieldsto see which fields have data
+    // Challenge 1
+    // 1. check all the form fields to see which fields have data
     // 2. add them to the apiURL as parameters
     // 3. Test the responses in the Network tab
 

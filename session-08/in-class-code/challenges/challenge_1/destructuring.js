@@ -22,15 +22,15 @@ const {
   lastName,
   age: yearsOld,
   isStudent,
-  address: { street, city, zipCode },
+  address,
   skills,
-  socialProfiles: { twitter: twitterHandle, linkedIn},
+  socialProfiles: {},
   isEmployed,
 } = userObject;
 
 // This doesnt look right!
-// const street = address.street;
-// const twitterHandle = socialProfiles.twitter;
+const street = address.street;
+const twitterHandle = socialProfiles.twitter;
 
 const greeting =
   "Hello, my name is " +

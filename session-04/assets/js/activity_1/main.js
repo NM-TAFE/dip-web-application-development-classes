@@ -1,4 +1,4 @@
-import { add, subtract } from "./math.js";
+import {} from "";
 
-console.log("ES6 Module - Add:", add(2, 3)); // 5
-console.log("ES6 Module - Subtract:", subtract(5, 2)); // 3
+console.log(); // 5
+console.log(); // 3
