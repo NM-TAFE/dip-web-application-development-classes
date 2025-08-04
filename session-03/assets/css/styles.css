@@ -1,5 +1,15 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #save-me {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+button {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
 }
