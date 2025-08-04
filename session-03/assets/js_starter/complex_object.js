@@ -6,15 +6,21 @@ const userObject = {
   address: {
     street: "123 Main St",
     city: "Perth",
-    zipCode: "6000"
+    zipCode: "6000",
   },
   skills: ["JavaScript", "HTML", "CSS"],
   socialProfiles: {
     twitter: "@johndoe",
-    linkedIn: "linkedin.com/in/johndoe"
+    linkedIn: "linkedin.com/in/johndoe",
   },
-  isEmployed: true
+  isEmployed: true,
+  addSkills(newSkill) {
+    this.skills.push(newSkill);
+    console.log(this.skills.map((skill) => `<li>${skill}</li>`));
+  },
 };
+
+userObject.addSkills("Docker");
 
 console.log(userObject.firstName); // Output: John
 console.log(userObject.address.city); // Output: Anytown
@@ -24,7 +30,6 @@ console.log(userObject.socialProfiles.twitter); // Output: @johndoe
 userObject.firstName = "Xavier";
 userObject["url"] = "https://www.9thlevel.com";
 delete userObject["url"];
-
 
 userObject["fullNamefunction"] = (firstName, lastName) => {
   console.log(`${firstName} ${lastName}`);
