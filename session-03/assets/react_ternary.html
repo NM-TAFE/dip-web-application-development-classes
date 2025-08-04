@@ -1,108 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React with Ternary</title>
     <!-- React + Babel -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
 
-<div id="app"></div>
+    <script type="text/babel">
+      const userObject = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 30,
+        isStudent: false,
+        address: {
+          street: "123 Main St",
+          city: "Perth",
+          zipCode: "6000",
+        },
+        skills: ["JavaScript", "HTML", "CSS"],
+        socialProfiles: {
+          twitter: "@johndoe",
+          linkedIn: "linkedin.com/in/johndoe",
+        },
+        isEmployed: true,
+      };
 
-<script type="text/babel">
-    const userObject = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    isStudent: false,
-    address: {
-    street: "123 Main St",
-    city: "Perth",
-    zipCode: "6000",
-},
-    skills: ["JavaScript", "HTML", "CSS"],
-    socialProfiles: {
-    twitter: "@johndoe",
-    linkedIn: "linkedin.com/in/johndoe",
-},
-    isEmployed: true,
-};
-
-    const employmentStatus = userObject.isEmployed
+      const employmentStatus = userObject.isEmployed
         ? userObject.isStudent
-        ? "not looking for work"
-    : "employed"
-    : "unemployed";
+          ? "not looking for work"
+          : "employed"
+        : "unemployed";
 
-    console.log(`${userObject.firstName} is ${employmentStatus}`);
+      console.log(`${userObject.firstName} is ${employmentStatus}`);
 
-    function UserCard() {
-    return (
-    <div
-    style={{
-    marginTop: "2rem",
-    padding: "1rem",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    fontFamily: "Arial",
-    background: "#f8f8f8",
-    maxWidth: "400px",
-}}
-    >
-    <h2>
-{userObject.firstName} {userObject.lastName}
-    </h2>
-    <p>Age: {userObject.age}</p>
-    <p>Status: {employmentStatus}</p>
-    <p>Skills: {userObject.skills.join(", ")}</p>
-    <p>
-    Address: {userObject.address.street},{" "}
-{userObject.address.city} {userObject.address.zipCode}
-    </p>
-    <p>
-    Twitter: {userObject.socialProfiles.twitter} <br />
-    LinkedIn: {userObject.socialProfiles.linkedIn}
-    </p>
-    </div>
-    );
-}
+      function UserCard() {
+        return (
+          <div
+            style={{
+              marginTop: "2rem",
+              padding: "1rem",
+              border: "1px solid #ccc",
+              borderRadius: "8px",
+              fontFamily: "Arial",
+              background: "#f8f8f8",
+              maxWidth: "400px",
+            }}
+          >
+            <h2>
+              {userObject.firstName} {userObject.lastName}
+            </h2>
+            <p>Age: {userObject.age}</p>
+            <p>Status: {employmentStatus}</p>
+            <p>Skills: {userObject.skills.join(", ")}</p>
+            <p>
+              Address: {userObject.address.street}, {userObject.address.city}{" "}
+              {userObject.address.zipCode}
+            </p>
+            <p>
+              Twitter: {userObject.socialProfiles.twitter} <br />
+              LinkedIn: {userObject.socialProfiles.linkedIn}
+            </p>
+          </div>
+        );
+      }
 
-    const root = ReactDOM.createRoot(document.getElementById("app"));
-    // Render component only if not unemployed
-    employmentStatus === "unemployed"
-        ? root.render(<p style={{ fontFamily: "Arial" }}>User is unemployed. No details shown.</p>)
-    : root.render(<UserCard />);
-</script>
+      const root = ReactDOM.createRoot(document.getElementById("app"));
+      // Render component only if not unemployed
+      employmentStatus === "unemployed"
+        ? root.render(
+            <p style={{ fontFamily: "Arial" }}>
+              User is unemployed. No details shown.
+            </p>
+          )
+        : root.render(<UserCard />);
+    </script>
 
-<script type="text/babel">
-    function DateInputComponent() {
+    <script type="text/babel">
+      function DateInputComponent() {
         const [newDate, setNewDate] = React.useState("");
 
         const inputStyle = {
-            margin: "5px",
-            padding: "7px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
+          margin: "5px",
+          padding: "7px",
+          border: "1px solid #ccc",
+          borderRadius: "4px",
         };
 
         return (
-            <input
-                type="date"
-                className="input"
-                style={inputStyle}
-                onChange={(event) => setNewDate(event.target.value)}
-                value={newDate}
-            />
+          <input
+            type="date"
+            className="input"
+            style={inputStyle}
+            onChange={(event) => setNewDate(event.target.value)}
+            value={newDate}
+          />
         );
-    }
+      }
 
-    const dateRoot = ReactDOM.createRoot(document.getElementById("react-date-input"));
-    dateRoot.render(<DateInputComponent />);
-</script>
-</body>
+      const dateRoot = ReactDOM.createRoot(
+        document.getElementById("react-date-input")
+      );
+      dateRoot.render(<DateInputComponent />);
+    </script>
+  </body>
 </html>
