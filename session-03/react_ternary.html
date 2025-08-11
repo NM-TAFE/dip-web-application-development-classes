@@ -12,6 +12,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <div id="react-date-input"></div>
 
     <script type="text/babel">
       const userObject = {
@@ -29,7 +30,7 @@
           twitter: "@johndoe",
           linkedIn: "linkedin.com/in/johndoe",
         },
-        isEmployed: true,
+        isEmployed: false,
       };
 
       const employmentStatus = userObject.isEmployed
@@ -75,14 +76,12 @@
       // Render component only if not unemployed
       employmentStatus === "unemployed"
         ? root.render(
-            <p style={{ fontFamily: "Arial" }}>
-              User is unemployed. No details shown.
-            </p>
+            <p style={{ fontFamily: "Arial" }}>No employed Users found.</p>
           )
         : root.render(<UserCard />);
     </script>
 
-    <script type="text/babel">
+    <!-- <script type="text/babel">
       function DateInputComponent() {
         const [newDate, setNewDate] = React.useState("");
 
@@ -108,6 +107,6 @@
         document.getElementById("react-date-input")
       );
       dateRoot.render(<DateInputComponent />);
-    </script>
+    </script> -->
   </body>
 </html>

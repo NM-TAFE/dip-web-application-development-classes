@@ -42,3 +42,4 @@ const userObjectInstance = new UserObject(
 );
 
 // Log the new instance of the object
+console.log(userObjectInstance);
