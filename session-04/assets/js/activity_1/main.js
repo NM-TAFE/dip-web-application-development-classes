@@ -1,4 +1,4 @@
-import {} from "";
+import { add, subtract } from "./math.js";
 
-console.log(); // 5
-console.log(); // 3
+console.log(add(3, 2)); // 5
+console.log(subtract(5, 2)); // 3

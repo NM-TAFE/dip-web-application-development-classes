@@ -1,42 +1,78 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Autosave Example</title>
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to Our Website</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autosave Example</title>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
     <div class="container">
-      <h1>Form Autosave</h1>
+      <h1 class="title">Web Storage API</h1>
+      <h2 class="subtitle">Form Autosave</h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="box">
       <form id="save-me">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <label for="address">Address</label>
-        <input type="text" id="address" />
-        <label for="email">Email</label>
-        <input type="email" id="email" />
-        <label for="more">Additional thoughts?</label>
-        <textarea name="more" id="more"></textarea>
-        <p>
-          <button type="submit">Submit</button>
-        </p>
+        <div class="field">
+          <label class="label" for="name">Name</label>
+          <div class="control">
+            <input class="input" type="text" name="name" id="name" placeholder="Jane Doe" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="address">Address</label>
+          <div class="control">
+            <input class="input" type="text" name="address" id="address" placeholder="123 Sample St" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <div class="control">
+            <input class="input" type="email" name="email" id="email" placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="more">Additional thoughts?</label>
+          <div class="control">
+            <textarea class="textarea" name="more" id="more" placeholder="Type away..."></textarea>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" type="submit">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-light" type="reset">Reset</button>
+          </div>
+        </div>
       </form>
     </div>
-    <footer>
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
-    </footer>
-    <script src="assets/js_starter/scripts_challenge_4.js"></script>
-  </body>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+  </div>
+</footer>
+<script src="assets/js_starter/scripts_challenge_4.js"></script>
+</body>
 </html>
+
