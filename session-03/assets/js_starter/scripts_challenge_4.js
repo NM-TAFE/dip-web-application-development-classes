@@ -19,7 +19,11 @@ function inputHandler(event) {
  * Clear all of the saved fields from storage
  */
 function clearStorage() {
-  //
+  let fields = form.elements;
+
+  for (let field of fields) {
+    localStorage.removeItem(prefix + field.id);
+  }
 }
 
 /**
@@ -27,10 +31,17 @@ function clearStorage() {
  */
 function loadSaved() {
   //
+  let fields = form.elements;
+
+  for (let field of fields) {
+    let saved = localStorage.getItem(prefix + field.id);
+    if (!saved) continue;
+    field.value = saved;
+  }
 }
 
-// Load saved data from localStorage
-function loadSaved() {}
+loadSaved();
+
 // Listen for DOM events
 form.addEventListener("input", inputHandler);
 form.addEventListener("submit", clearStorage);
