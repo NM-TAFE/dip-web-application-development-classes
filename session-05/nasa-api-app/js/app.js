@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (startDate) params.push(`start_date=${startDate}`);
     if (endDate) params.push(`end_date=${endDate}`);
     if (date) params.push(`date=${date}`);
-    if (thumbs) params.push(`thumbs=${thumbs});
+    if (thumbs) params.push(`thumbs=${thumbs}`);
 
     // Challenge 1
     // 1. check all the form fields to see which fields have data
