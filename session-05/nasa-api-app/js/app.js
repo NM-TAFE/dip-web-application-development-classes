@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const fetchApodButton = document.getElementById("fetch-apod");
   const apodContent = document.getElementById("apod-content");
-  const apiKey = "YOUR_API_KEY";
+  const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
 
   fetchApodButton.addEventListener("click", () => {
     const date = document.getElementById("date").value;
@@ -10,12 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const count = document.getElementById("count").value;
     const thumbs = document.getElementById("thumbs").checked;
 
-    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+    let params = [];
+    if (count) params.push(`count=${count}`);
+    if (startDate) params.push(startDate);
+    if (endDate) params.push(endDate);
+    if (date) params.push(date);
+    if (thumbs) params.push(thumbs);
 
     // Challenge 1
     // 1. check all the form fields to see which fields have data
     // 2. add them to the apiURL as parameters
     // 3. Test the responses in the Network tab
+    console.log(params);
+    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+    // let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=some_key&count=5 `;
+
+    apiUrl += `&${params.join("&")}`;
+    console.log(apiUrl);
 
     // Challenge 2
     // 1. add the following headers to your API call content type, user agent & cache control
@@ -25,14 +36,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch(apiUrl, {
       method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-cache",
+      },
     })
       // Challenge 3
-      // 1. change the anonymous arrow function below to check if the response code is 200(ok)
-      // 2. if the response is ok return the response.json() object
+
       // 3. if not ok throw a new error which includes the status code
       // 4. Test the responses in the Network tab
       .then((response) => {
-        return response.json();
+        // 1. change the anonymous arrow function below to check if the response code is 200(ok)
+        // 2. if the response is ok return the response.json() object
+        if (response.ok) {
+          console.log(response);
+          return response.json();
+        } else {
+          throw new Error(`${console.log(response)}`);
+        }
       })
       .then((data) => {
         if (Array.isArray(data)) {
