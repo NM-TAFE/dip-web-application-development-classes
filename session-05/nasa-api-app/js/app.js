@@ -12,18 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let params = [];
     if (count) params.push(`count=${count}`);
-    if (startDate) params.push(startDate);
-    if (endDate) params.push(endDate);
-    if (date) params.push(date);
-    if (thumbs) params.push(thumbs);
+    if (startDate) params.push(`start_date=${startDate}`);
+    if (endDate) params.push(`end_date=${endDate}`);
+    if (date) params.push(`date=${date}`);
+    if (thumbs) params.push(`thumbs=${thumbs});
 
     // Challenge 1
     // 1. check all the form fields to see which fields have data
     // 2. add them to the apiURL as parameters
     // 3. Test the responses in the Network tab
-    console.log(params);
+    // console.log(params);
     let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-    // let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=some_key&count=5 `;
 
     apiUrl += `&${params.join("&")}`;
     console.log(apiUrl);
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(response);
           return response.json();
         } else {
-          throw new Error(`${console.log(response)}`);
+          throw new Error(`${console.log(response.status)}`);
         }
       })
       .then((data) => {
