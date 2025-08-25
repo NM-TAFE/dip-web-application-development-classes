@@ -8,6 +8,7 @@
     <!-- https://react.dev/learn/reacting-to-input-with-state#how-declarative-ui-compares-to-imperative -->
     <!-- https://codesandbox.io/p/sandbox/react-dev-f5rdws?file=%2Fpublic%2Findex.html&utm_medium=sandpack -->
     <div id="app"></div>
+
     <!-- React and ReactDOM from UMD -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -17,11 +18,12 @@
     <!-- JSX script with type="text/babel" to ensure Babel compiles it - defer-->
     <script type="text/babel">
       function App({
-        initialStatus = "empty", // Rename the prop to initialStatus
+        initialStatus = "typing", // Rename the prop to initialStatus
       }) {
+        console.log(initialStatus);
         const [answer, setAnswer] = React.useState("");
         const [error, setError] = React.useState(null);
-        const [status, setStatus] = React.useState("typing"); // status is now used as state only
+        const [status, setStatus] = React.useState(initialStatus); // status is now used as state only
 
         if (status === "success") {
           return <h1>That's right!</h1>;
@@ -70,7 +72,7 @@
         // Pretend it's hitting the network.
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            let shouldError = answer.toLowerCase() !== "lima";
+            let shouldError = answer.toLowerCase() !== "state is hard";
             if (shouldError) {
               reject(new Error("Good guess but a wrong answer. Try again!"));
             } else {
@@ -82,7 +84,7 @@
 
       // Correct usage of ReactDOM.createRoot
       const root = ReactDOM.createRoot(document.getElementById("app"));
-      root.render(<App />);
+      root.render(<App initialStatus="typing" />);
     </script>
   </body>
 </html>

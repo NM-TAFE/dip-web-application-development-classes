@@ -11,7 +11,7 @@ async function handleFormSubmit(event) {
     hide(form);
   } catch (error) {
     show(errorMessage);
-    errorMessage.textContent = err.message;
+    errorMessage.textContent = error.message;
   } finally {
     hide(loadingMessage);
     enable(textarea);
