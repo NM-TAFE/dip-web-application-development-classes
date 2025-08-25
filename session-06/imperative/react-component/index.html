@@ -18,12 +18,13 @@
     <!-- JSX script with type="text/babel" to ensure Babel compiles it - defer-->
     <script type="text/babel">
       function App({
-        initialStatus = "typing", // Rename the prop to initialStatus
+        initialStatus = "", // Rename the prop to initialStatus
       }) {
-        console.log(initialStatus);
         const [answer, setAnswer] = React.useState("");
         const [error, setError] = React.useState(null);
         const [status, setStatus] = React.useState(initialStatus); // status is now used as state only
+
+        // console.log(status);
 
         if (status === "success") {
           return <h1>That's right!</h1>;
