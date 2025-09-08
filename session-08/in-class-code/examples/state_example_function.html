@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const UserProfile = () => {
+        const [user, setUser] = React.useState({
+          firstName: "John",
+          lastName: "Doe",
+          age: 30,
+          isStudent: false,
+          address: { street: "123 Main St", city: "Perth", zipCode: "6000" },
+          skills: ["JavaScript", "HTML", "CSS"],
+          socialProfiles: {
+            twitter: "@johndoe",
+            linkedIn: "linkedin.com/in/johndoe",
+          },
+          isEmployed: true,
+        });
+
+        const increaseAge = () => {
+          setUser((prevUser) => (
+          // console.log(prevUser),
+          {
+            ...prevUser,
+            age: prevUser.age + 1,
+          }));
+        };
+
+        return (
+          <div>
+            <h1>
+              {user.firstName} {user.lastName}
+            </h1>
+            <p>Age: {user.age}</p>
+            <p>Student: {user.isStudent ? "Yes" : "No"}</p>
+
+            <div>
+              <h2>Address</h2>
+              <p>{user.address.street}</p>
+              <p>
+                {user.address.city}, {user.address.zipCode}
+              </p>
+            </div>
+
+            <div>
+              <h2>Skills</h2>
+              <ul>
+                {user.skills.map((skill, i) => (
+                  <li key={i}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2>Social Profiles</h2>
+              <p>Twitter: {user.socialProfiles.twitter}</p>
+              <p>LinkedIn: {user.socialProfiles.linkedIn}</p>
+            </div>
+
+            <p>Employed: {user.isEmployed ? "Yes" : "No"}</p>
+            <button onClick={increaseAge}>Increase Age</button>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("app"));
+      root.render(<UserProfile />);
+    </script>
+  </body>
+</html

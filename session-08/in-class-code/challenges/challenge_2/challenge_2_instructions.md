@@ -9,7 +9,7 @@
 - ternary operators
 - ES modules
 
-**Note:** Use the manually create my-react-app top run the code
+**Note:** Use the manually create my-react-app to run the code
 
 1. Change the name of the challenge file to **UserObject.js** & move the files to the my-react-app manual template
 2. `run npm install` to create the project
