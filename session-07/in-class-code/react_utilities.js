@@ -1,12 +1,14 @@
 // Core React
 import React, { useState, useEffect } from "react";
 
+// console.log(useState);
+
 // Routing
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 // State Management
 import { Provider, useSelector, useDispatch } from "react-redux";
-import store from "./store"; // Redux store setup
+import store from "./store"; // Relative path
 import { connect } from "react-redux"; // For class components if used
 
 // UI Components (Material-UI as an example)
