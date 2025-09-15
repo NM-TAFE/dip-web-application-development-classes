@@ -1,6 +1,8 @@
 import React from "react";
 
 function DateInputComponent() {
+  var newDate = "";
+
   const inputStyle = {
     margin: "5px",
     padding: "8px",
@@ -9,8 +11,8 @@ function DateInputComponent() {
   };
 
   const handleChange = (event) => {
-    const newDate = event.target.value;
-    // debugger;
+    newDate = event.target.value;
+    debugger;
   };
 
   return (
