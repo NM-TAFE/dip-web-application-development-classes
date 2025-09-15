@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true, // cleans up the /dist folder before build
   },
   module: {
     rules: [
@@ -20,7 +21,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/web-components.html",
+      template: "./public/index.html",
     }),
   ],
   devServer: {
@@ -28,6 +29,6 @@ module.exports = {
       directory: path.join(__dirname, "dist"),
     },
     compress: true,
-    port: 3001,
+    port: 3000,
   },
 };

@@ -28,20 +28,55 @@
       root.render(<HomePage />);
     </script> -->
     <script type="text/babel">
-      const app = document.getElementById("app")
+      const app = document.getElementById("app");
 
       function Header({ title }) {
-        console.log(title);
-        {/* return <h1>Develop. Preview. Ship.</h1>;*/}
-        {/*return <h1>title</h1>;*/}
-        return <h1>{ title }</h1>;
+        console.log("Title prop value in header", title);
+        {
+          /* return <h1>Develop. Preview. Ship.</h1>;*/
+        }
+        {
+          /*return <h1>title</h1>;*/
+        }
+        return <h1>{title}</h1>;
       }
 
       function HomePage() {
+        const user = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 30,
+          isStudent: false,
+          address: {
+            street: "123 Main St",
+            city: "Perth",
+            zipCode: "6000",
+          },
+          skills: ["JavaScript", "HTML", "CSS"],
+          socialProfiles: {
+            twitter: "@johndoe",
+            linkedIn: "linkedin.com/in/johndoe",
+          },
+          isEmployed: true,
+        };
+
+        // console.log(user.isStudent);
+        // debugger;
+
         return (
           <div>
             {/* Nesting the Header component */}
-            <Header title="React"/>
+            <Header
+              title={user.firstName}
+              last={user.lastName}
+              skills={user.skills}
+              student={user.isStudent}
+            />
+            <Header title="React 1" />
+            <Header title="React 2" />
+            <Header title="React 3" />
+            <Header title="React 4" />
+            <Header title="React 5" />
           </div>
         );
       }

@@ -13,7 +13,7 @@ cd my-react-app
 
 ### 2. **Initialise a New npm Project**
 
-Initialise a new npm project with:
+Initialise a new npm project with
 
 ```bash
 npm init -y. #or npm init for a manual

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React 18 App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- React and ReactDOM from UMD -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+      // Define the UserProfile component
+      function UserProfile(props) {
+        return React.createElement(
+          "div",
+          {},
+          React.createElement(
+            "h1",
+            {},
+            `${props.user.firstName} ${props.user.lastName}`
+          ),
+          React.createElement("p", {}, `Age: ${props.user.age}`),
+          React.createElement(
+            "p",
+            {},
+            `Student: ${props.user.isStudent ? "Yes" : "No"}`
+          ),
+          React.createElement(
+            "div",
+            {},
+            React.createElement("h2", {}, "Address"),
+            React.createElement("p", {}, props.user.address.street),
+            React.createElement(
+              "p",
+              {},
+              `${props.user.address.city}, ${props.user.address.zipCode}`
+            )
+          ),
+          React.createElement(
+            "div",
+            {},
+            React.createElement("h2", {}, "Skills"),
+            React.createElement(
+              "ul",
+              {},
+              props.user.skills.map((skill) =>
+                React.createElement("li", { key: skill }, skill)
+              )
+            )
+          ),
+          React.createElement(
+            "div",
+            {},
+            React.createElement("h2", {}, "Social Profiles"),
+            React.createElement(
+              "p",
+              {},
+              `Twitter: ${props.user.socialProfiles.twitter}`
+            ),
+            React.createElement(
+              "p",
+              {},
+              `LinkedIn: ${props.user.socialProfiles.linkedIn}`
+            )
+          ),
+          React.createElement(
+            "p",
+            {},
+            `Employed: ${props.user.isEmployed ? "Yes" : "No"}`
+          )
+        );
+      }
+
+      // Define the App component
+      function App() {
+        const userObject = {
+          firstName: "John",
+          lastName: "Doe",
+          age: "30",
+          isStudent: false,
+          address: {
+            street: "123 Main St",
+            city: "Perth",
+            zipCode: "6000",
+          },
+          skills: ["JavaScript", "HTML", "CSS"],
+          socialProfiles: {
+            twitter: "@johndoe",
+            linkedIn: "linkedin.com/in/johndoe",
+          },
+          isEmployed: true,
+        };
+
+        return React.createElement(UserProfile, { user: userObject });
+      }
+
+      // Use ReactDOM.createRoot and render the App component
+      const domNode = document.getElementById("app");
+      const root = ReactDOM.createRoot(domNode);
+      root.render(React.createElement(App));
+    </script>
+  </body>
+</html>
