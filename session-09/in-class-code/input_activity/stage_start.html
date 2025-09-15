@@ -16,7 +16,9 @@
     <form>
       <div class="field">
         <label class="label">Date (YYYY-MM-DD)</label>
-        <div id="react-date-input"></div>
+        <div class="control">
+          <input class="input" type="date" />
+        </div>
       </div>
       <div class="field">
         <label class="label">Start Date (YYYY-MM-DD)</label>
@@ -50,41 +52,5 @@
     </form>
 
     <div id="apod-content"></div>
-    <script type="text/babel">
-      function DateInputComponent() {
-        var newDate = "";
-
-        const inputStyle = {
-          margin: "5px",
-          padding: "7px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        };
-
-        const inputRef = React.useRef(null);
-
-        const handleChange = () => {
-          const newDate = event.target.value;
-          inputRef.current.value = newDate;
-          debugger;
-        };
-
-        return (
-          <input
-            type="date"
-            className="input"
-            style={inputStyle}
-            onChange={handleChange}
-            value={newDate}
-            ref={inputRef}
-          />
-        );
-      }
-
-      const root = ReactDOM.createRoot(
-        document.getElementById("react-date-input")
-      );
-      root.render(<DateInputComponent />);
-    </script>
   </body>
 </html>

@@ -11,16 +11,16 @@
     1. log the component in the console, go into the notes
     2. find the children of the the <ul>, edit it notice what happens when you log out the global variable
     3. add one as a global variable in the inspector 
-    4. go into reactFib , note where outr key property is & the unique ID -->
-    <script type="text/jsx">
-      const app = document.getElementById("app")
+    4. go into reactFib , note where our key property is & the unique ID -->
+    <script type="text/babel">
+      const app = document.getElementById("app");
 
       function Header({ title }) {
-        return <h1>{title ? title : 'Default title'}</h1>;
+        return <h1>{title ? title : "Default title"}</h1>;
       }
 
       function HomePage() {
-        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
         return (
           <div>

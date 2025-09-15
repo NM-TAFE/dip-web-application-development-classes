@@ -53,14 +53,15 @@
       root.render(<HomePage />);
     </script> -->
     <!-- Return a props property in a function with conditionals -->
-    <!-- <script type="text/jsx">
-      const app = document.getElementById("app")
+    <script type="text/babel">
+      const app = document.getElementById("app");
 
       function createTitle(title) {
+        debugger;
         if (title) {
           return title;
         } else {
-          return 'Default title';
+          return "Default title";
         }
       }
 
@@ -72,17 +73,17 @@
         return (
           <div>
             {/* Nesting the Header component */}
-            <Header title="React"/>
+            <Header title="React" />
           </div>
         );
       }
 
       const root = ReactDOM.createRoot(app);
       root.render(<HomePage />);
-    </script> -->
+    </script>
     <!-- Return a props property using destructuring & ternary operator -->
     <!-- You will see this one alot in the wild -->
-    <script type="text/jsx">
+    <!-- <script type="text/jsx">
       const app = document.getElementById("app")
 
       function Header({ title }) {
@@ -101,6 +102,6 @@
 
       const root = ReactDOM.createRoot(app);
       root.render(<HomePage />);
-    </script>
+    </script> -->
   </body>
 </html>
