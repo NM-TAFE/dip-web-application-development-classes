@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const fetchApodButton = document.getElementById("fetch-apod");
   const apodContent = document.getElementById("apod-content");
-  const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+  const apiKey = "<DEMO KEY>";
 
   fetchApodButton.addEventListener("click", () => {
     const date = document.getElementById("date").value;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // template
+  // template & render
   function displayApod(data, container) {
     if (data.media_type === "image") {
       container.innerHTML += `

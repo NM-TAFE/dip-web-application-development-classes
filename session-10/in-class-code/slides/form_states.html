@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Form Example</title>
+    <!-- Correct Bulma CSS link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React, ReactDOM, and Babel -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React Component -->
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      function FormComponent() {
+        const [inputValue, setInputValue] = useState("");
+        const [formState, setFormState] = useState("empty"); // 'empty', 'typing', 'submitting', 'success', 'error'
+
+        const handleInputChange = (event) => {
+          debugger;
+          const value = event.target.value;
+          setInputValue(value);
+          setFormState(value.length > 0 ? "typing" : "empty");
+        };
+
+        const handleSubmit = (event) => {
+          event.preventDefault();
+          setFormState("submitting");
+
+          setTimeout(() => {
+            if (inputValue.length < 5) {
+              setFormState("error");
+            } else {
+              setFormState("success");
+            }
+          }, 2000);
+        };
+
+        const resetForm = () => {
+          setInputValue("");
+          setFormState("empty");
+        };
+
+        useEffect(() => {
+          if (formState === "error" || formState === "success") {
+            document.querySelector("input")?.focus();
+          }
+        }, [formState]);
+
+        return (
+          <div className="container mt-5">
+            {formState === "success" ? (
+              <div className="notification is-success">
+                <p>Thank you! Your form has been submitted successfully.</p>
+                <button className="button is-primary" onClick={resetForm}>
+                  Submit another response
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="box">
+                <div className="field">
+                  <label className="label">Input</label>
+                  <div className="control">
+                    <input
+                      className={`input ${
+                        formState === "error" ? "is-danger" : ""
+                      }`}
+                      type="text"
+                      value={inputValue}
+                      onChange={handleInputChange}
+                      placeholder="Enter at least 5 characters"
+                      disabled={formState === "submitting"}
+                    />
+                  </div>
+                  {formState === "error" && (
+                    <p className="help is-danger">
+                      Error: Input must be at least 5 characters long.
+                    </p>
+                  )}
+                </div>
+                <div className="field">
+                  <div className="control">
+                    <button
+                      className="button is-primary"
+                      type="submit"
+                      disabled={
+                        formState === "empty" || formState === "submitting"
+                      }
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            )}
+
+            {formState === "submitting" && (
+              <p className="notification is-warning">Submitting your form...</p>
+            )}
+            {formState === "error" && (
+              <div className="notification is-danger">
+                <button className="button is-warning" onClick={resetForm}>
+                  Try again
+                </button>
+              </div>
+            )}
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <FormComponent />
+      );
+    </script>
+  </body>
+</html>

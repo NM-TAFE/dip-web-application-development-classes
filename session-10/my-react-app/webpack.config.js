@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true, // cleans up the /dist folder before build
   },
   module: {
     rules: [
@@ -15,14 +16,6 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
-      },
-      // part of activity 1
-      {
-        test: /\.css$/, // Match any .css file
-        use: [
-          "style-loader", // Injects CSS into the DOM
-          "css-loader", // Turns CSS into CommonJS
-        ],
       },
     ],
   },

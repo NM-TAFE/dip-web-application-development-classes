@@ -105,6 +105,7 @@ function Header({ title }) {
 
 function Gallery() {
   const { useState } = React;
+  debugger;
   const [index, setIndex] = useState(0);
 
   function handleClick() {
@@ -120,7 +121,6 @@ function Gallery() {
     <>
       <Header title="Develop. Preview. Ship." />
       <button onClick={handleClick}>Next</button>
-      {/* <button onClick={handleClick()}>Next</button> */}
       {/* <button onClick={() => setIndex((index + 1) % sculptureList.length)}> */}
       {/* {" "}
         Next

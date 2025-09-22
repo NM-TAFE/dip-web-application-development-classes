@@ -1,14 +1,8 @@
 import React from "react";
-import StyledComponent from "./components/StyledComponent";
-import FormComponent from "./components/FormComponent";
+import DateInputComponent from "./components/DateInputComponent";
 
-const App = () => {
-  return (
-    <div>
-      <StyledComponent />
-      <FormComponent />
-    </div>
-  );
-};
+function App() {
+  return <DateInputComponent />;
+}
 
 export default App;
