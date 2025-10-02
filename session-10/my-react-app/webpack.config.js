@@ -6,7 +6,8 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true, // cleans up the /dist folder before build
+    publicPath: "/",
+    clean: true,
   },
   module: {
     rules: [
@@ -25,10 +26,15 @@ module.exports = {
     }),
   ],
   devServer: {
+    port: 3000,
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, "public"),
     },
     compress: true,
-    port: 3000,
+    headers: {
+      "Content-Security-Policy":
+        "default-src 'self'; script-src 'self' 'unsafe-eval'; connect-src 'self' http://localhost:3000;",
+    },
+    historyApiFallback: true,
   },
 };

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function DateInputComponent() {
-  var newDate = "";
+  const [newDate, setNewDate] = useState("");
 
   const inputStyle = {
     margin: "5px",
@@ -11,8 +11,7 @@ function DateInputComponent() {
   };
 
   const handleChange = (event) => {
-    newDate = event.target.value;
-    debugger;
+    setNewDate(event.target.value);
   };
 
   return (
