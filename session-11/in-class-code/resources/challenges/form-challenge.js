@@ -25,7 +25,7 @@ function FormComponent() {
 
     // Simulate an API call
     setTimeout(() => {
-      // Step 5: if tthe input is less than 5 charcterds set the stat to error
+      // Step 5: if the input is less than 5 charcterds set the stat to error
       if (inputValue.length < 5) {
         // Trigger error if input length < 5 characters
       } else {
