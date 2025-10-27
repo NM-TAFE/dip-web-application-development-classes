@@ -1,5 +1,3 @@
-"use client";
-
 export default function NotFound() {
   return (
     <section className="hero is-danger is-fullheight">

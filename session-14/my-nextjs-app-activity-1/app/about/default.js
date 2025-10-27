@@ -1,4 +1,7 @@
+"use client";
+
 import "bulma/css/bulma.min.css";
+
 export default function Default() {
   return (
     <section className="section">

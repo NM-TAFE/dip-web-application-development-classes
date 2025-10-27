@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+"use client";
 
 export default function HomePage() {
   return (
