@@ -22,7 +22,7 @@ The `-y` flag automatically accepts the default settings, but you can omit it if
 Next.js requires `react` and `react-dom` as peer dependencies, so you need to install them along with `next`:
 
 ```bash
-npm install next react react-dom
+npm install next@15.5.6 react@18.3.1 react-dom@18.3.1
 ```
 
 #### **4. Configure Your `package.json` for Next.js**
@@ -40,14 +40,14 @@ Open your `package.json` file and add scripts to run and build your Next.js appl
     "start": "next start" // Script to start the production server
   },
   "dependencies": {
-    "next": "latest", // Use the latest stable versions
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "^15.5.6", // Use the latest stable versions
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
 ```
 
-#### **5. Create the Required Directory Structure for App Router**
+#### **5. Create the directory for App Router**
 
 Now, manually create the folder structure for a Next.js app using the App Router:
 
