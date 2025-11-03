@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
               <a className="navbar-item" href="/nasa-api">
                 NASA API
               </a>
-              <a className="navbar-item" href="/">
+              <a className="navbar-item" href="/about">
                 About
               </a>
             </div>
