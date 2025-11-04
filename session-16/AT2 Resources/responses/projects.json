@@ -1,0 +1,30 @@
+{
+    "id": "01k96g497zzz1cz8exkpbbx32z",
+    "content": "Esse excepturi harum necessitatibus.",
+    "commentable": {
+        "id": "01k96g3zxg3rs1hjxez8hc982n",
+        "type": "Project"
+    },
+    "user": {
+        "id": "01k96g3zx63gxwk3e5yre60f92",
+        "name": "Dr. Carmela Simonis DVM",
+        "email": {
+            "address": "adams.sheila@example.org",
+            "verified": true
+        },
+        "created": {
+            "human": "38 minutes ago",
+            "string": "2025-11-04T03:56:07+00:00"
+        }
+    },
+    "workspace": {
+        "id": "01k96g3y0jj835sa3s204n6fr4",
+        "name": "Project Management Workspace 1",
+        "description": "Project Management template workspace",
+        "identifier": "tenant-pm-001",
+        "created": {
+            "human": "38 minutes ago",
+            "string": "2025-11-04T03:56:06+00:00"
+        }
+    }
+}

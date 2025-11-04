@@ -1,0 +1,82 @@
+erDiagram
+    USERS {
+        ULID id PK
+        STRING name
+        STRING email
+        STRING password
+        ULID workspace_id FK
+        DATETIME email_verified_at
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    WORKSPACES {
+        ULID id PK
+        STRING name
+        STRING description
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    PROJECTS {
+        ULID id PK
+        STRING name
+        TEXT description
+        DATE start_date
+        DATE due_date
+        ULID workspace_id FK
+        ULID user_id FK
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    TASKS {
+        ULID id PK
+        STRING title
+        TEXT description
+        ENUM status
+        DATE due_date
+        ULID project_id FK
+        ULID assigned_to FK
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    MILESTONES {
+        ULID id PK
+        STRING title
+        TEXT description
+        DATE target_date
+        ULID project_id FK
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    COMMENTS {
+        ULID id PK
+        TEXT content
+        ULID user_id FK
+        ULID task_id FK
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    CHECKLIST_ITEMS {
+        ULID id PK
+        STRING name
+        BOOLEAN is_completed
+        ULID task_id FK
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    WORKSPACES ||--o{ USERS : "has many"
+    WORKSPACES ||--o{ PROJECTS : "has many"
+    PROJECTS ||--o{ TASKS : "has many"
+    PROJECTS ||--o{ MILESTONES : "has many"
+    TASKS ||--o{ COMMENTS : "has many"
+    TASKS ||--o{ CHECKLIST_ITEMS : "has many"
+    USERS ||--o{ COMMENTS : "writes"
+    USERS ||--o{ TASKS : "assigned to"
+    USERS }o--|| WORKSPACES : "belongs to"
+    PROJECTS ||--o{ COMMENTS : "has many"
