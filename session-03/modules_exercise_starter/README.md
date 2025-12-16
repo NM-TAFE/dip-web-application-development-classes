@@ -15,6 +15,10 @@ You will start with a single JavaScript file and refactor it into 2 modules and 
 - your repo you will use will be automatically created
 - clone the classroom repo to your local machine
 
+**if you are not using Github Classroom**
+
+- download the code from either the Class repo or the Blackboard shell
+
 ```bash
 git clone <repository-url>
 cd <repository-directory>
@@ -28,7 +32,7 @@ Open the scripts.js file located in the /js directory and review the existing co
 
 Split the code into at two modules and one class.
 
-**Structure:**
+**Example Structure:**
 
 - eventHandlers.js: This module will contain functions that handle button events.
 - domUpdate.js: This module will contain functions that manipulate the DOM.
@@ -49,24 +53,9 @@ Split the code into at two modules and one class.
 
 Refactor the scripts.js to use the new modules.
 
-Commit and Push Your Changes
-
-```bash
-git add .
-git commit -m "Refactored JavaScript into modules and added Post class"
-git push origin main
-```
-
 ### 5. Implement the Modules
 
 Create the following files in the /js directory:
-
-Commit and Push Your Changes (1 commit for each module)
-```bash
-git add .
-git commit -m "Refactored JavaScript into modules and added Post class"
-git push origin main
-```
 
 - domUpdate.js
 - eventHandlers.js
@@ -77,3 +66,10 @@ git push origin main
 
 Open index.html in a web browser(Either from Live Server or Laragon) to ensure everything works as expected.
 
+### 7. Commit and Push Your Changes(if using github classroom)
+
+```bash
+git add .
+git commit -m "Refactored JavaScript into modules and added Post class"
+git push origin main
+```

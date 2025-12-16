@@ -1,4 +1,4 @@
-// Modularisation Exercise.js
+// Moularisation Exercise.js
 
 // Method to handle the Click Me button click event
 function handleClickMeButton() {
