@@ -1,25 +1,30 @@
 <html>
   <body>
     <div id="app"></div>
-    <!-- Chapter 6: Have a look in your components tab -->
+    <!-- Chapter 8: Have a look in your components tab -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Click through the steps in the chapter -->
-    <!-- In the inspector note the javascript object props and what part Babel plays -->
     <!-- <script type="text/jsx">
       const app = document.getElementById("app")
 
-      function Header(props) {
-        console.log(props);
-        return <h1>Develop. Preview. Ship.</h1>;
+      function Header({ title }) {
+        return <h1>{title ? title : 'Default title'}</h1>;
       }
 
       function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
         return (
           <div>
-            {/* Nesting the Header component */}
-            <Header title="React"/>
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <button>Like</button>
           </div>
         );
       }
@@ -30,53 +35,26 @@
     <script type="text/babel">
       const app = document.getElementById("app");
 
+      let handleClick = () => {
+        console.log("increment like count");
+      };
+
       function Header({ title }) {
-        console.log("Title prop value in header", title);
-        {
-          /* return <h1>Develop. Preview. Ship.</h1>;*/
-        }
-        {
-          /*return <h1>title</h1>;*/
-        }
-        return <h1>{title}</h1>;
+        return <h1>{title ? title : "Default title"}</h1>;
       }
 
       function HomePage() {
-        const user = {
-          firstName: "John",
-          lastName: "Doe",
-          age: 30,
-          isStudent: false,
-          address: {
-            street: "123 Main St",
-            city: "Perth",
-            zipCode: "6000",
-          },
-          skills: ["JavaScript", "HTML", "CSS"],
-          socialProfiles: {
-            twitter: "@johndoe",
-            linkedIn: "linkedin.com/in/johndoe",
-          },
-          isEmployed: true,
-        };
-
-        // console.log(user.isStudent);
-        // debugger;
+        const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
         return (
           <div>
-            {/* Nesting the Header component */}
-            <Header
-              title={user.firstName}
-              last={user.lastName}
-              skills={user.skills}
-              student={user.isStudent}
-            />
-            <Header title="React 1" />
-            <Header title="React 2" />
-            <Header title="React 3" />
-            <Header title="React 4" />
-            <Header title="React 5" />
+            <Header title="Develop. Preview. Ship." />
+            <ul>
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <button onClick={handleClick}>Like</button>
           </div>
         );
       }
