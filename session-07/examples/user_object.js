@@ -26,4 +26,4 @@ const user = {
   },
 };
 
-user.address
+user.address;
