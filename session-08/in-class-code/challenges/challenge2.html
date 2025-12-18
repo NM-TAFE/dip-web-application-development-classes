@@ -55,28 +55,6 @@
         );
       }
 
-      // Destructuring Example
-      function User({
-        firstName,
-        lastName,
-        age,
-        address,
-        skills,
-        socialProfiles,
-        isEmployed,
-      }) {
-        console.log(firstName);
-        return (
-          <div>
-            <h2>
-              Name: {firstName} {lastName}
-            </h2>
-            <p>Age: {age}</p>
-            <p>Skills: {skills.join(", ")}</p>
-          </div>
-        );
-      }
-
       const root = ReactDOM.createRoot(document.getElementById("app"));
       root.render(<Parent />);
     </script>
