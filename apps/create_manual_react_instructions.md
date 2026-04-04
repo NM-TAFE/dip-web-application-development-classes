@@ -28,7 +28,7 @@ This will create a `package.json` file with default settings.
 Install React and ReactDOM as dependencies:
 
 ```bash
-npm install react@latest react-dom@latest
+npm install react@18.3.1 react-dom@18.3.1
 ```
 
 ### 4. **Set Up a Build Tool**

@@ -1,4 +1,4 @@
-**The challenge_2.js file contains one JS princciple related to JavaScript concepts:**
+**The challenge_2.js file contains one JS principle related to JavaScript concepts:**
 
 - arrow functions
 - objects
