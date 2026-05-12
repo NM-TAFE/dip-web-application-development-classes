@@ -22,6 +22,7 @@ The `-y` flag automatically accepts the default settings, but you can omit it if
 Next.js requires `react` and `react-dom` as peer dependencies, so you need to install them along with `next`:
 
 ```bash
+# Check for the latest version in the docs
 npm install next@15.5.6 react@18.3.1 react-dom@18.3.1
 ```
 
@@ -35,7 +36,7 @@ Open your `package.json` file and add scripts to run and build your Next.js appl
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev", // Script to start the development server
+    "dev": "next dev --turbopack", // Script to start the development server
     "build": "next build", // Script to build the application
     "start": "next start" // Script to start the production server
   },
@@ -53,11 +54,13 @@ Now, manually create the folder structure for a Next.js app using the App Router
 
 ```bash
 mkdir -p app/api/users
-mkdir -p styles
+mkdir -p styles public
 touch app/layout.js app/page.js app/api/users/route.js styles/globals.css
 ```
 
 This will create the following structure:
+
+**Dont forget to add the logo.png to the public directory**
 
 ```
 my-nextjs-app/
@@ -69,6 +72,8 @@ my-nextjs-app/
 │   └── page.js
 ├── styles/
 │   └── globals.css
+├── public/
+│   └── logo.png
 ├── package-.json
 ├── package.json
 └── node_modules/
@@ -136,7 +141,7 @@ export default function RootLayout({ children }) {
         <footer className="footer">
           <div className="content has-text-centered">
             <p>
-              © 2024 <strong>My Next.js App</strong>. Built with Next.js and
+              © 2026 <strong>My Next.js App</strong>. Built with Next.js and
               Bulma.
             </p>
           </div>
@@ -205,6 +210,7 @@ body {
 
 ```js
 export const metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "NM Tafe Next.js App",
   description: "A modern application built with Next.js and Bulma",
   openGraph: {
@@ -256,7 +262,7 @@ Once Bulma is installed, you need to import its CSS file into your Next.js proje
 
    ```javascript
    // app/layout.js
-   import "./globals.css"; // Import global styles (including Bulma)
+   import "../styles/globals.css"; // Import global styles (including Bulma)
 
    export default function RootLayout({ children }) {
      return (
@@ -285,6 +291,76 @@ Test the api route localhost:3000`.
 curl "http://localhost:3000/api/user"
 ```
 
-### **Summary**
+## Part B: ESLint Setup (ESLint 9 with Next.js 15.5.5)
 
-By following these steps, you have manually created a Next.js project using NPM without using `npx` or the `create-next-app` tool. You now have a basic project structure that uses the App Router (`app/` directory) in Next.js 14, with scripts configured to run, build, and start your Next.js application.
+This project uses **ESLint 9** with the **ESLint CLI directly**.  
+Do **not** use `next lint`, as it is not compatible with ESLint 9 in Next.js 15.5.x.
+
+---
+
+### 1. Install ESLint and the Next.js ESLint Config
+
+From the root of your project, install ESLint and the Next.js configuration package:
+
+```bash
+npm install --save-dev eslint eslint-config-next@16
+```
+
+This installs:
+
+- ESLint version 9
+- Next.js ESLint rules compatible with ESLint 9
+
+---
+
+### 2. Create the ESLint Configuration File
+
+Create a file named **`eslint.config.mjs`** in the project root:
+
+```bash
+touch eslint.config.mjs
+```
+
+Add the following contents:
+
+```js
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+
+export default defineConfig([
+  ...nextVitals,
+  globalIgnores([".next/**", "node_modules/**"]),
+]);
+```
+
+---
+
+### 3. Configure the Lint Script
+
+Update the `scripts` section of your `package.json` to run ESLint directly:
+
+```json
+{
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
+```
+
+Do not use `next lint`.
+
+---
+
+### 4. Run ESLint
+
+Run ESLint with:
+
+```bash
+npm run lint
+```
+
+To automatically fix issues ESLint can resolve:
+
+```bash
+npm run lint -- --fix
+```

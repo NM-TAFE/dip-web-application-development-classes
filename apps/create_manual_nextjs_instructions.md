@@ -74,7 +74,7 @@ my-nextjs-app/
 │   └── globals.css
 ├── public/
 │   └── logo.png
-├── package-.json
+├── package-lock.json
 ├── package.json
 └── node_modules/
 ```
@@ -288,7 +288,7 @@ This command will start the development server at `http://
 Test the api route localhost:3000`.
 
 ```bash
-curl "http://localhost:3000/api/user"
+curl "http://localhost:3000/api/users"
 ```
 
 ## Part B: ESLint Setup (ESLint 9 with Next.js 15.5.5)
