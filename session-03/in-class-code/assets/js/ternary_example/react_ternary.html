@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -30,7 +30,7 @@
           twitter: "@johndoe",
           linkedIn: "linkedin.com/in/johndoe",
         },
-        isEmployed: false,
+        isEmployed: true,
       };
 
       const employmentStatus = userObject.isEmployed
@@ -77,7 +77,7 @@
       // Render component only if not unemployed
       employmentStatus === "unemployed"
         ? root.render(
-            <p style={{ fontFamily: "Arial" }}>No employed Users found.</p>
+            <p style={{ fontFamily: "Arial" }}>No employed Users found.</p>,
           )
         : root.render(<UserCard />);
     </script>

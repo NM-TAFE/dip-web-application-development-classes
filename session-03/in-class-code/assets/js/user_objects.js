@@ -69,3 +69,11 @@ const users = [
     },
   },
 ];
+
+const userObjectComponent = ({ isEmployed, firstName, age, changeAge }) => {
+  console.log(
+    `${firstName} is ${isEmployed ? "Well done" : "Your lecturer is rubbish"} but you are only ${age}`,
+  );
+};
+
+users.map((user) => userObjectComponent(user));
