@@ -70,10 +70,7 @@ const users = [
   },
 ];
 
-const userObjectComponent = ({ isEmployed, firstName, age, changeAge }) => {
-  console.log(
-    `${firstName} is ${isEmployed ? "Well done" : "Your lecturer is rubbish"} but you are only ${age}`,
-  );
-};
+const userObjectComponent = ({ isEmployed, firstName, age, changeAge }) =>
+  `<li>${firstName} is ${isEmployed ? "Well done" : "Your lecturer is rubbish"} but you are only ${age}</li>`;
 
-users.map((user) => userObjectComponent(user));
+let usersTemplate = users.map((user) => userObjectComponent(user));
