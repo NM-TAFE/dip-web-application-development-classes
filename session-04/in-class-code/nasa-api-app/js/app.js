@@ -29,53 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. set the cache control no no cache
     // 3. set the content type application/json
     // 4. Test the responses in the Network tab
-    fetch(apiUrl, {
-      "Content-Type": "application/json",
-      "User-Agent": "APODViewer/1.0",
-      "Cache-Control": ":no-cache",
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-      })
-      .then((data) => {
-        apodContent.innerHTML = "";
-
-        if (Array.isArray(data)) {
-          data.forEach((item) => displayApodItem(item, apodContent));
-        } else {
-          displayApodItem(data, apodContent);
-        }
-      })
-      .catch((error) => {
-        apodContent.innerHTML = `<p>Error fetching item: ${error.message}</p>`;
-      });
 
     // Challenge 3
-    function displayApodItem(item, container) {
-      if (item.media_type === "image") {
-        container.innerHTML += `
-        <figure class="image is-4by3">
-          <img src="${item.url}" alt="${item.title}">
-        </figure>
-        <h2 class="title is-4">${item.title}</h2>
-        <p>${item.explanation}</p>
-      `;
-      } else if (item.media_type === "video") {
-        container.innerHTML += `
-        <div class="video-apodContent">
-          <iframe src="${item.url}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <h2 class="title is-4">${item.title}</h2>
-        <p>${item.explanation}</p>
-      `;
-      } else {
-        container.innerHTML += `<p>Media type not supported: ${item.media_type}</p>`;
-      }
-    }
 
     //   // Challenge 4
     //   // 1. Move the if/else if/else into a resusable function ready for modularisation
