@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>React 18 App</title>
@@ -23,9 +23,9 @@
         const [answer, setAnswer] = React.useState("");
         const [error, setError] = React.useState(null);
         const [status, setStatus] = React.useState(initialStatus); // status is now used as state only
+        console.log("Destructured form state", [status, setStatus]);
 
-        console.log(answer);
-
+        // console.log(answer);
         // console.log(status);
 
         if (status === "success") {
@@ -84,10 +84,13 @@
           }, 1500);
         });
       }
+      function hello() {
+        return "hello";
+      }
 
       // Correct usage of ReactDOM.createRoot
       const root = ReactDOM.createRoot(document.getElementById("app"));
-      root.render(<App initialStatus="typing" />);
+      root.render(<App initialStatus="empty" johns="hello" />);
     </script>
   </body>
 </html>
