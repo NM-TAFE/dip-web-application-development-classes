@@ -16,7 +16,7 @@ cd my-react-app
 Initialise a new npm project with
 
 ```bash
-npm init -y. #or npm init for a manual
+npm init #or npm init for a manual
 ```
 
 This will create a `package.json` file with default settings.
