@@ -14,6 +14,7 @@ let app = new UserComponent("#app", {
   data,
   template: (props) => {
     let html = props.map(
+<<<<<<< HEAD
       (user) => `
                     <div class="user-card">
                     <h2>${user.firstName} ${user.lastName}</h2>
@@ -29,6 +30,24 @@ let app = new UserComponent("#app", {
                     </div>
                     </div>
                 `,
+=======
+      (user) =>
+        `
+            <div class="user-card">
+                <h2>${user.firstName} ${user.lastName}</h2>
+                <p><strong>Age:</strong> ${user.age}</p>
+                <p><strong>Employment:</strong> ${
+                  user.isEmployed ? "Employed" : "Not Employed"
+                }</p>
+                <p><strong>Location:</strong> ${user.address.city}</p>
+                <p><strong>Skills:</strong> ${user.skills.join(", ")}</p>
+                <div class="social-links">
+                    #<br>
+                    #LinkedIn</a>
+                </div>
+            </div>
+        `,
+>>>>>>> 0b96775f3bd2ebdec76aa437164e77cc1473443a
     );
 
     return html;
